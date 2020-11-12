@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 [AlwaysUpdateSystem]
 [UpdateInGroup(typeof(InitializationSystemGroup))]
-public class CameraInputSystem: SystemBase, UserInputs.IGameControlsActions
+public class InputSystem: SystemBase, UserInputs.IGameControlsActions
 {
     private UserInputs userInputs;
 
