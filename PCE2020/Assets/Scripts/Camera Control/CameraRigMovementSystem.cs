@@ -1,20 +1,27 @@
 ﻿using Unity.Entities;
 using Unity.Transforms;
-using UnityEngine;
 
-public class CameraRigMovementSystem : SystemBase
-{
-    protected override void OnUpdate()
-    {
-        float deltaTime = Time.DeltaTime;
+namespace Assets.Scripts.Camera_Control {
 
-        Entities.ForEach((ref Translation pos, in CameraMoveComponent movement) => {
-            if (movement.useFastSpeed)
-                pos.Value += movement.direction * movement.fastSpeed * deltaTime;
-            else
-                pos.Value += movement.direction * movement.speed * deltaTime;
+    /// <summary>
+    /// System handling the movement of the camera rig.
+    /// </summary>
+    public class CameraRigMovementSystem : SystemBase {
 
-            pos.Value.z += movement.zoom * deltaTime;
-        }).Run();
+        /// <summary>
+        /// Updates the position of the camera rig based on deltaTime and CameraMoveComponent.
+        /// </summary>
+        protected override void OnUpdate() {
+            var deltaTime = Time.DeltaTime;
+
+            Entities.ForEach((ref Translation pos, in CameraMoveComponent movement) => {
+                if (movement.UseFastSpeed)
+                    pos.Value += movement.Direction * movement.FastSpeed * deltaTime;
+                else
+                    pos.Value += movement.Direction * movement.Speed * deltaTime;
+
+                pos.Value.z += movement.Zoom * deltaTime;
+            }).Run(); // Run on main thread
+        }
     }
 }

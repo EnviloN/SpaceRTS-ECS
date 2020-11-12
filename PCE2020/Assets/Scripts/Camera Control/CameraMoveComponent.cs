@@ -1,14 +1,18 @@
-﻿using Unity.Entities;
+﻿using System;
+using Unity.Entities;
 using Unity.Mathematics;
-using UnityEngine;
 
-[GenerateAuthoringComponent]
-public struct CameraMoveComponent : IComponentData
-{
-    public float3 direction;
-    public float speed;
-    public float fastSpeed;
-    public float zoom;
+namespace Assets.Scripts.Camera_Control {
+    /// <summary>
+    /// Component holding data about the camera movement.
+    /// </summary>
+    [GenerateAuthoringComponent]
+    public struct CameraMoveComponent : IComponentData {
+        [NonSerialized] public float3 Direction;
+        [NonSerialized] public float Zoom;
+        public float Speed;
+        public float FastSpeed;
 
-    public bool useFastSpeed;
+        [NonSerialized] public bool UseFastSpeed;
+    }
 }

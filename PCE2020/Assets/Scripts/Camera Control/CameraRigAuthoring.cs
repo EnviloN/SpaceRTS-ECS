@@ -1,19 +1,23 @@
-﻿using JetBrains.Annotations;
-using Unity.Entities;
+﻿using Unity.Entities;
 using UnityEngine;
 
+namespace Assets.Scripts.Camera_Control {
 
-[AddComponentMenu("Custom Authoring/Camera Rig Authoring")]
-public class CameraRigAuthoring : MonoBehaviour, IConvertGameObjectToEntity
-{
-    public GameObject riggedCamera;
-    public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
-    {
-        FollowRig followRig = riggedCamera.GetComponent<FollowRig>();
+    /// <summary>
+    /// Authoring to make the camera rig (entity) share its reference
+    /// to the <c>FollowRig</c> script running on the camera.
+    /// </summary>
+    [AddComponentMenu("Custom Authoring/Camera Rig Authoring")]
+    public class CameraRigAuthoring : MonoBehaviour, IConvertGameObjectToEntity {
+        public GameObject riggedCamera;
 
-        if (followRig == null)
-            followRig = riggedCamera.AddComponent<FollowRig>();
+        public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem) {
+            var followRig = riggedCamera.GetComponent<FollowRig>();
 
-        followRig.rigEntity = entity;
+            if (followRig == null)
+                followRig = riggedCamera.AddComponent<FollowRig>();
+
+            followRig.RigEntity = entity;
+        }
     }
 }
