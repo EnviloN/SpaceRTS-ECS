@@ -252,14 +252,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef22634b8421c394b94ad503798bda73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction:
-    x: 0
-    y: 0
-    z: 0
   Speed: 5
   FastSpeed: 10
-  Zoom: 0
-  UseFastSpeed: 0
+  FastZoomMultiplier: 5
+  MinZoom: 5
+  MaxZoom: 20
 --- !u!114 &1667910840
 MonoBehaviour:
   m_ObjectHideFlags: 0

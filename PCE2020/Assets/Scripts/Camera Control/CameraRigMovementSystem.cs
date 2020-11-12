@@ -2,12 +2,10 @@
 using Unity.Transforms;
 
 namespace Assets.Scripts.Camera_Control {
-
     /// <summary>
     /// System handling the movement of the camera rig.
     /// </summary>
     public class CameraRigMovementSystem : SystemBase {
-
         /// <summary>
         /// Updates the position of the camera rig based on deltaTime and CameraMoveComponent.
         /// </summary>
@@ -15,12 +13,21 @@ namespace Assets.Scripts.Camera_Control {
             var deltaTime = Time.DeltaTime;
 
             Entities.ForEach((ref Translation pos, in CameraMoveComponent movement) => {
+                // Camera movement on a XY plane
                 if (movement.UseFastSpeed)
                     pos.Value += movement.Direction * movement.FastSpeed * deltaTime;
                 else
                     pos.Value += movement.Direction * movement.Speed * deltaTime;
 
-                pos.Value.z += movement.Zoom * deltaTime;
+                // Camera movement on Z ax
+                var zoomSpeedMultiplier = movement.UseFastSpeed ? movement.FastZoomMultiplier : 1;
+                pos.Value.z += movement.Zoom * zoomSpeedMultiplier * deltaTime;
+
+                if (pos.Value.z > -movement.MinZoom)
+                    pos.Value.z = -movement.MinZoom;
+
+                else if (pos.Value.z < -movement.MaxZoom)
+                    pos.Value.z = -movement.MaxZoom;
             }).Run(); // Run on main thread
         }
     }
