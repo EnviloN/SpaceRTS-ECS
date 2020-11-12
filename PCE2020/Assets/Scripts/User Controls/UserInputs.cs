@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/UserControls/UserInputs.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Scripts/User Controls/UserInputs.inputactions'
 
 using System;
 using System.Collections;
@@ -40,6 +40,22 @@ public class @UserInputs : IInputActionCollection, IDisposable
                     ""id"": ""18b0282c-e3ed-40d3-b326-b16d961a40dd"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SpaceGrab"",
+                    ""type"": ""Button"",
+                    ""id"": ""c92fbd4a-ab82-4e72-a8cf-431d8d4c2438"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""MouseDelta"",
+                    ""type"": ""Value"",
+                    ""id"": ""49afd832-5be8-496b-b568-3a7ea08d3984"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": ""ScaleVector2(x=2,y=2)"",
                     ""interactions"": """"
                 }
             ],
@@ -186,6 +202,28 @@ public class @UserInputs : IInputActionCollection, IDisposable
                     ""action"": ""CameraZoom"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""693db9e6-a9dc-440f-9b67-11c9c9eadd28"",
+                    ""path"": ""<Mouse>/middleButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""SpaceGrab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bb69b2b9-1d2b-4c8d-85ca-876221a37e1e"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""MouseDelta"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -214,6 +252,8 @@ public class @UserInputs : IInputActionCollection, IDisposable
         m_GameControls_CameraMovement = m_GameControls.FindAction("CameraMovement", throwIfNotFound: true);
         m_GameControls_CameraMovementSpeedUp = m_GameControls.FindAction("CameraMovementSpeedUp", throwIfNotFound: true);
         m_GameControls_CameraZoom = m_GameControls.FindAction("CameraZoom", throwIfNotFound: true);
+        m_GameControls_SpaceGrab = m_GameControls.FindAction("SpaceGrab", throwIfNotFound: true);
+        m_GameControls_MouseDelta = m_GameControls.FindAction("MouseDelta", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -266,6 +306,8 @@ public class @UserInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_GameControls_CameraMovement;
     private readonly InputAction m_GameControls_CameraMovementSpeedUp;
     private readonly InputAction m_GameControls_CameraZoom;
+    private readonly InputAction m_GameControls_SpaceGrab;
+    private readonly InputAction m_GameControls_MouseDelta;
     public struct GameControlsActions
     {
         private @UserInputs m_Wrapper;
@@ -273,6 +315,8 @@ public class @UserInputs : IInputActionCollection, IDisposable
         public InputAction @CameraMovement => m_Wrapper.m_GameControls_CameraMovement;
         public InputAction @CameraMovementSpeedUp => m_Wrapper.m_GameControls_CameraMovementSpeedUp;
         public InputAction @CameraZoom => m_Wrapper.m_GameControls_CameraZoom;
+        public InputAction @SpaceGrab => m_Wrapper.m_GameControls_SpaceGrab;
+        public InputAction @MouseDelta => m_Wrapper.m_GameControls_MouseDelta;
         public InputActionMap Get() { return m_Wrapper.m_GameControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -291,6 +335,12 @@ public class @UserInputs : IInputActionCollection, IDisposable
                 @CameraZoom.started -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnCameraZoom;
                 @CameraZoom.performed -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnCameraZoom;
                 @CameraZoom.canceled -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnCameraZoom;
+                @SpaceGrab.started -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnSpaceGrab;
+                @SpaceGrab.performed -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnSpaceGrab;
+                @SpaceGrab.canceled -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnSpaceGrab;
+                @MouseDelta.started -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnMouseDelta;
+                @MouseDelta.performed -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnMouseDelta;
+                @MouseDelta.canceled -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnMouseDelta;
             }
             m_Wrapper.m_GameControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -304,6 +354,12 @@ public class @UserInputs : IInputActionCollection, IDisposable
                 @CameraZoom.started += instance.OnCameraZoom;
                 @CameraZoom.performed += instance.OnCameraZoom;
                 @CameraZoom.canceled += instance.OnCameraZoom;
+                @SpaceGrab.started += instance.OnSpaceGrab;
+                @SpaceGrab.performed += instance.OnSpaceGrab;
+                @SpaceGrab.canceled += instance.OnSpaceGrab;
+                @MouseDelta.started += instance.OnMouseDelta;
+                @MouseDelta.performed += instance.OnMouseDelta;
+                @MouseDelta.canceled += instance.OnMouseDelta;
             }
         }
     }
@@ -322,5 +378,7 @@ public class @UserInputs : IInputActionCollection, IDisposable
         void OnCameraMovement(InputAction.CallbackContext context);
         void OnCameraMovementSpeedUp(InputAction.CallbackContext context);
         void OnCameraZoom(InputAction.CallbackContext context);
+        void OnSpaceGrab(InputAction.CallbackContext context);
+        void OnMouseDelta(InputAction.CallbackContext context);
     }
 }

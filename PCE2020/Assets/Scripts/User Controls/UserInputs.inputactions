@@ -28,6 +28,22 @@
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "SpaceGrab",
+                    "type": "Button",
+                    "id": "c92fbd4a-ab82-4e72-a8cf-431d8d4c2438",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MouseDelta",
+                    "type": "Value",
+                    "id": "49afd832-5be8-496b-b568-3a7ea08d3984",
+                    "expectedControlType": "Vector2",
+                    "processors": "ScaleVector2(x=2,y=2)",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -171,6 +187,28 @@
                     "processors": "",
                     "groups": "Keyboard and Mouse",
                     "action": "CameraZoom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "693db9e6-a9dc-440f-9b67-11c9c9eadd28",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "SpaceGrab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bb69b2b9-1d2b-4c8d-85ca-876221a37e1e",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "MouseDelta",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
