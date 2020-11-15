@@ -1,5 +1,6 @@
 ﻿using Unity.Entities;
 using Unity.Transforms;
+using UnityEngine;
 
 namespace Assets.Scripts.Camera_Control {
     /// <summary>
@@ -13,11 +14,13 @@ namespace Assets.Scripts.Camera_Control {
             var deltaTime = Time.DeltaTime;
 
             Entities.ForEach((ref Translation pos, in CameraMoveComponent movement) => {
+                var zoomRelativeBoost = ((-pos.Value.z) - movement.MinZoom) / (movement.MaxZoom - movement.MinZoom) + 1;
+
                 // Camera movement on a XY plane
                 if (movement.UseFastSpeed)
-                    pos.Value += movement.Direction * movement.FastSpeed * deltaTime;
+                    pos.Value += movement.Direction * movement.FastSpeed * zoomRelativeBoost * deltaTime;
                 else
-                    pos.Value += movement.Direction * movement.Speed * deltaTime;
+                    pos.Value += movement.Direction * movement.Speed * zoomRelativeBoost * deltaTime;
 
                 // Camera movement on Z ax
                 var zoomSpeedMultiplier = movement.UseFastSpeed ? movement.FastZoomMultiplier : 1;
