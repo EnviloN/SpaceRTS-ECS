@@ -1,0 +1,762 @@
+fileFormatVersion: 2
+guid: 3ea7550375b828a43bb78a465952cf3e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2062996684264962786
+    second: SpaceShips_spritesheet_0
+  - first:
+      213: 5766540647875529543
+    second: SpaceShips_spritesheet_1
+  - first:
+      213: 7157616227568818307
+    second: SpaceShips_spritesheet_2
+  - first:
+      213: -414444014521670637
+    second: SpaceShips_spritesheet_3
+  - first:
+      213: 7872667897250675296
+    second: SpaceShips_spritesheet_4
+  - first:
+      213: 8077714084885854620
+    second: SpaceShips_spritesheet_5
+  - first:
+      213: -5287258796905952066
+    second: SpaceShips_spritesheet_6
+  - first:
+      213: 1076690973317704001
+    second: SpaceShips_spritesheet_7
+  - first:
+      213: -5936053883119234226
+    second: SpaceShips_spritesheet_8
+  - first:
+      213: 8861530728437257018
+    second: SpaceShips_spritesheet_9
+  - first:
+      213: -4078862415535254425
+    second: SpaceShips_spritesheet_10
+  - first:
+      213: -8447555372798855909
+    second: SpaceShips_spritesheet_11
+  - first:
+      213: -3356910431086624091
+    second: SpaceShips_spritesheet_12
+  - first:
+      213: 8968228949311392390
+    second: SpaceShips_spritesheet_13
+  - first:
+      213: 6587395518958413753
+    second: SpaceShips_spritesheet_14
+  - first:
+      213: -5375318272906626951
+    second: SpaceShips_spritesheet_15
+  - first:
+      213: -8396360447154879871
+    second: SpaceShips_spritesheet_16
+  - first:
+      213: 5283200857059652806
+    second: SpaceShips_spritesheet_17
+  - first:
+      213: 5140750093450131357
+    second: SpaceShips_spritesheet_18
+  - first:
+      213: 6671826010311839368
+    second: SpaceShips_spritesheet_19
+  - first:
+      213: 4237775856201265483
+    second: SpaceShips_spritesheet_20
+  - first:
+      213: 2811891923590704911
+    second: SpaceShips_spritesheet_21
+  - first:
+      213: 2634276090540937557
+    second: SpaceShips_spritesheet_22
+  - first:
+      213: 7011623075039144437
+    second: SpaceShips_spritesheet_23
+  - first:
+      213: 5292993040112804010
+    second: SpaceShips_spritesheet_24
+  - first:
+      213: 1147004509410286383
+    second: SpaceShips_spritesheet_25
+  - first:
+      213: 5700322156124697099
+    second: SpaceShips_spritesheet_26
+  - first:
+      213: 2487724018686196541
+    second: SpaceShips_spritesheet_27
+  - first:
+      213: -3412648448543251143
+    second: SpaceShips_spritesheet_28
+  - first:
+      213: -6136413717866352195
+    second: SpaceShips_spritesheet_29
+  - first:
+      213: 2021785846025025724
+    second: SpaceShips_spritesheet_30
+  - first:
+      213: 8127417761591730907
+    second: SpaceShips_spritesheet_31
+  - first:
+      213: 4170529124016254791
+    second: SpaceShips_spritesheet_32
+  - first:
+      213: 4771462676748412355
+    second: SpaceShips_spritesheet_33
+  - first:
+      213: -3549544518756838266
+    second: SpaceShips_spritesheet_34
+  - first:
+      213: 3855884038627541405
+    second: SpaceShips_spritesheet_35
+  - first:
+      213: -7114498810751804827
+    second: SpaceShips_spritesheet_36
+  - first:
+      213: -1998146157894726418
+    second: SpaceShips_spritesheet_37
+  - first:
+      213: 2135548864736338117
+    second: SpaceShips_spritesheet_38
+  - first:
+      213: 3237658865754493033
+    second: SpaceShips_spritesheet_39
+  - first:
+      213: -245535025336357036
+    second: SpaceShips_spritesheet_40
+  - first:
+      213: 1680380112667854850
+    second: SpaceShips_spritesheet_41
+  - first:
+      213: 1046173863674423040
+    second: SpaceShips_spritesheet_42
+  - first:
+      213: 7132904971682201627
+    second: SpaceShips_spritesheet_43
+  - first:
+      213: 6165221498974674496
+    second: SpaceShips_spritesheet_44
+  - first:
+      213: 3058800148093818299
+    second: SpaceShips_spritesheet_45
+  - first:
+      213: -7363249719039163700
+    second: SpaceShips_spritesheet_46
+  - first:
+      213: 7079537185617530290
+    second: SpaceShips_spritesheet_47
+  - first:
+      213: -3789536378205170812
+    second: SpaceShips_spritesheet_48
+  - first:
+      213: 2926740754739347825
+    second: SpaceShips_spritesheet_49
+  - first:
+      213: -897282750696696121
+    second: SpaceShips_spritesheet_50
+  - first:
+      213: 863089384641343432
+    second: SpaceShips_spritesheet_51
+  - first:
+      213: -7139342218574847468
+    second: SpaceShips_spritesheet_52
+  - first:
+      213: -4037092182721321417
+    second: SpaceShips_spritesheet_53
+  - first:
+      213: 7176714727483482199
+    second: SpaceShips_spritesheet_54
+  - first:
+      213: 8499523254041783181
+    second: SpaceShips_spritesheet_55
+  - first:
+      213: 7554143064068337616
+    second: SpaceShips_spritesheet_56
+  - first:
+      213: 5959552321772759730
+    second: SpaceShips_spritesheet_57
+  - first:
+      213: 6737679331420617584
+    second: SpaceShips_spritesheet_58
+  - first:
+      213: -1048951716810876819
+    second: SpaceShips_spritesheet_59
+  - first:
+      213: 2846578134048824143
+    second: SpaceShips_spritesheet_60
+  - first:
+      213: 2298789580336917184
+    second: SpaceShips_spritesheet_61
+  - first:
+      213: 3618231803603510244
+    second: SpaceShips_spritesheet_62
+  - first:
+      213: -7215808305566278435
+    second: SpaceShips_spritesheet_63
+  - first:
+      213: -501457293104151894
+    second: SpaceShips_spritesheet_64
+  - first:
+      213: -4435104402940190407
+    second: SpaceShips_spritesheet_65
+  - first:
+      213: 5045281545817561691
+    second: SpaceShips_spritesheet_66
+  - first:
+      213: -3102432919227227829
+    second: SpaceShips_spritesheet_67
+  - first:
+      213: 7780193809313973314
+    second: SpaceShips_spritesheet_68
+  - first:
+      213: 6418075012198571617
+    second: SpaceShips_spritesheet_69
+  - first:
+      213: -4720740091093049102
+    second: SpaceShips_spritesheet_70
+  - first:
+      213: -2671976122415942446
+    second: SpaceShips_spritesheet_71
+  - first:
+      213: -2207553317660617594
+    second: SpaceShips_spritesheet_72
+  - first:
+      213: -3189518356917509250
+    second: SpaceShips_spritesheet_73
+  - first:
+      213: -5790379651413916169
+    second: SpaceShips_spritesheet_74
+  - first:
+      213: 5211500654483783588
+    second: SpaceShips_spritesheet_75
+  - first:
+      213: 3537156613109847745
+    second: SpaceShips_spritesheet_0
+  - first:
+      213: -3132257457644183950
+    second: SpaceShips_spritesheet_1
+  - first:
+      213: 3959617190822850032
+    second: SpaceShips_spritesheet_2
+  - first:
+      213: 1607115299414592988
+    second: SpaceShips_spritesheet_3
+  - first:
+      213: -6947039322833087526
+    second: SpaceShips_spritesheet_4
+  - first:
+      213: 551757289572366330
+    second: SpaceShips_spritesheet_5
+  - first:
+      213: -3494904530298279893
+    second: SpaceShips_spritesheet_6
+  - first:
+      213: 8883657161417059267
+    second: SpaceShips_spritesheet_7
+  - first:
+      213: 9160536307563474433
+    second: SpaceShips_spritesheet_8
+  - first:
+      213: -4506497144919606628
+    second: SpaceShips_spritesheet_9
+  - first:
+      213: 5188757588450088481
+    second: SpaceShips_spritesheet_10
+  - first:
+      213: 4112380712754409966
+    second: SpaceShips_spritesheet_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: 0
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpaceShips_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 342
+        width: 178
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0, y: 110.5}
+        - {x: -89, y: -110.5}
+        - {x: 1, y: -36.5}
+        - {x: 89, y: -109.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c6165fe231861130800000000000000
+      internalID: 3537156613109847745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceShips_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 342
+        width: 178
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -0.04067993, y: 110.5}
+        - {x: -89, y: -110.5}
+        - {x: 1.1854248, y: -36.105713}
+        - {x: 89, y: -110.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27edc0c007cf784d0800000000000000
+      internalID: -3132257457644183950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceShips_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 342
+        width: 178
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -0.10559082, y: 110.5}
+        - {x: -89, y: -110.5}
+        - {x: 1.1117554, y: -36.505615}
+        - {x: 89, y: -110.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fda6892bd263f630800000000000000
+      internalID: 3959617190822850032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceShips_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 86
+        width: 178
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0.0603714, y: 110.5}
+        - {x: -89, y: -110.5}
+        - {x: 0.9988556, y: -37.088684}
+        - {x: 89, y: -110.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cddc3b699de9d4610800000000000000
+      internalID: 1607115299414592988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceShips_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 86
+        width: 178
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -0.18725586, y: 110.5}
+        - {x: -89, y: -110.5}
+        - {x: 1.1430359, y: -37.513382}
+        - {x: 89, y: -110.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad31dd9fa88279f90800000000000000
+      internalID: -6947039322833087526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceShips_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 86
+        width: 178
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0.36853027, y: 110.5}
+        - {x: -89, y: -110.5}
+        - {x: 1.0517578, y: -36.83139}
+        - {x: 89, y: -110.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: af7713fd45c38a700800000000000000
+      internalID: 551757289572366330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceShips_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 12
+        width: 11
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28eaa3b8da9f7fc0800000000000000
+      internalID: -3494904530298279893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceShips_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 12
+        width: 11
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb6e94ee17194b70800000000000000
+      internalID: 8883657161417059267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceShips_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 12
+        width: 11
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ea364bc33c02f70800000000000000
+      internalID: 9160536307563474433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceShips_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 12
+        width: 11
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9a31cf19b4b571c0800000000000000
+      internalID: -4506497144919606628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceShips_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 12
+        width: 11
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1261e25198b220840800000000000000
+      internalID: 5188757588450088481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceShips_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 12
+        width: 11
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee1f4ec487c121930800000000000000
+      internalID: 4112380712754409966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: -357, y: -235}
+      - {x: -364, y: -235}
+      - {x: -368, y: -238}
+      - {x: -368, y: -257}
+      - {x: -366, y: -276}
+      - {x: -361, y: -280}
+      - {x: -358, y: -279}
+      - {x: -353, y: -260}
+      - {x: -353, y: -240}
+    - - {x: -329, y: -235}
+      - {x: -332, y: -236}
+      - {x: -332, y: -269}
+      - {x: -327, y: -280}
+      - {x: -322, y: -280}
+      - {x: -317, y: -277}
+      - {x: -317, y: -235}
+    - - {x: -283, y: -235}
+      - {x: -295, y: -235}
+      - {x: -296, y: -237}
+      - {x: -296, y: -268}
+      - {x: -291, y: -280}
+      - {x: -287, y: -280}
+      - {x: -286, y: -279}
+      - {x: -281, y: -260}
+      - {x: -281, y: -236}
+    - - {x: -255, y: -235}
+      - {x: -260, y: -236}
+      - {x: -260, y: -265}
+      - {x: -255, y: -280}
+      - {x: -246, y: -280}
+      - {x: -245, y: -267}
+      - {x: -245, y: -235}
+    - - {x: -219, y: -235}
+      - {x: -224, y: -236}
+      - {x: -224, y: -265}
+      - {x: -219, y: -280}
+      - {x: -210, y: -280}
+      - {x: -209, y: -267}
+      - {x: -209, y: -235}
+    - - {x: -183, y: -235}
+      - {x: -188, y: -236}
+      - {x: -188, y: -265}
+      - {x: -183, y: -280}
+      - {x: -174, y: -280}
+      - {x: -173, y: -267}
+      - {x: -173, y: -235}
+    - - {x: -251, y: 16}
+      - {x: -254, y: 19}
+      - {x: -263, y: 19}
+      - {x: -348, y: -104}
+      - {x: -348, y: -206}
+      - {x: -166, y: -206}
+      - {x: -166, y: -199}
+      - {x: -184, y: -153}
+    - - {x: 0, y: 19}
+      - {x: -4, y: 19}
+      - {x: -92, y: -155}
+      - {x: -92, y: -206}
+      - {x: 90, y: -206}
+      - {x: 90, y: -198}
+      - {x: 5, y: 17}
+    - - {x: 257, y: 19}
+      - {x: 252, y: 19}
+      - {x: 164, y: -194}
+      - {x: 164, y: -206}
+      - {x: 346, y: -206}
+      - {x: 346, y: -192}
+      - {x: 261, y: 17}
+    - - {x: -255, y: 275}
+      - {x: -258, y: 275}
+      - {x: -261, y: 274}
+      - {x: -347, y: 72}
+      - {x: -348, y: 61}
+      - {x: -348, y: 50}
+      - {x: -166, y: 50}
+      - {x: -166, y: 57}
+      - {x: -253, y: 271}
+    - - {x: 0, y: 275}
+      - {x: -4, y: 275}
+      - {x: -87, y: 71}
+      - {x: -92, y: 54}
+      - {x: -92, y: 50}
+      - {x: 90, y: 50}
+      - {x: 90, y: 57}
+      - {x: 5, y: 273}
+    - - {x: 258, y: 275}
+      - {x: 250, y: 275}
+      - {x: 164, y: 59}
+      - {x: 164, y: 50}
+      - {x: 346, y: 50}
+      - {x: 346, y: 58}
+      - {x: 268, y: 255}
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
