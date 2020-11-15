@@ -1,6 +1,6 @@
-﻿using Unity.Entities;
+﻿using Assets.Scripts.Tags;
+using Unity.Entities;
 using Unity.Transforms;
-using UnityEngine;
 
 namespace Assets.Scripts.Camera_Control {
     /// <summary>
@@ -13,7 +13,7 @@ namespace Assets.Scripts.Camera_Control {
         protected override void OnUpdate() {
             var deltaTime = Time.DeltaTime;
 
-            Entities.ForEach((ref Translation pos, in CameraMoveComponent movement) => {
+            Entities.WithAll<CameraRigTag>().ForEach((ref Translation pos, in CameraMoveComponent movement) => {
                 var zoomRelativeBoost = ((-pos.Value.z) - movement.MinZoom) / (movement.MaxZoom - movement.MinZoom) + 1;
 
                 // Camera movement on a XY plane
