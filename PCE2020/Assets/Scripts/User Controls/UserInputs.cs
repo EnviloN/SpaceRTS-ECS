@@ -57,6 +57,22 @@ public class @UserInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": ""ScaleVector2(x=2,y=2)"",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""MousePosition"",
+                    ""type"": ""Value"",
+                    ""id"": ""9ae1e28f-f82a-4a3d-83d4-5fee76f01c5c"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""adc32981-3e6d-4c34-ae31-01929c2b93e9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -224,6 +240,28 @@ public class @UserInputs : IInputActionCollection, IDisposable
                     ""action"": ""MouseDelta"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""19cdc89d-bfa3-47f3-b493-daba80aa4af8"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""MousePosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4af3dcf9-80e0-4a90-9e3c-2bbd7713457e"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -254,6 +292,8 @@ public class @UserInputs : IInputActionCollection, IDisposable
         m_GameControls_CameraZoom = m_GameControls.FindAction("CameraZoom", throwIfNotFound: true);
         m_GameControls_SpaceGrab = m_GameControls.FindAction("SpaceGrab", throwIfNotFound: true);
         m_GameControls_MouseDelta = m_GameControls.FindAction("MouseDelta", throwIfNotFound: true);
+        m_GameControls_MousePosition = m_GameControls.FindAction("MousePosition", throwIfNotFound: true);
+        m_GameControls_Select = m_GameControls.FindAction("Select", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -308,6 +348,8 @@ public class @UserInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_GameControls_CameraZoom;
     private readonly InputAction m_GameControls_SpaceGrab;
     private readonly InputAction m_GameControls_MouseDelta;
+    private readonly InputAction m_GameControls_MousePosition;
+    private readonly InputAction m_GameControls_Select;
     public struct GameControlsActions
     {
         private @UserInputs m_Wrapper;
@@ -317,6 +359,8 @@ public class @UserInputs : IInputActionCollection, IDisposable
         public InputAction @CameraZoom => m_Wrapper.m_GameControls_CameraZoom;
         public InputAction @SpaceGrab => m_Wrapper.m_GameControls_SpaceGrab;
         public InputAction @MouseDelta => m_Wrapper.m_GameControls_MouseDelta;
+        public InputAction @MousePosition => m_Wrapper.m_GameControls_MousePosition;
+        public InputAction @Select => m_Wrapper.m_GameControls_Select;
         public InputActionMap Get() { return m_Wrapper.m_GameControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -341,6 +385,12 @@ public class @UserInputs : IInputActionCollection, IDisposable
                 @MouseDelta.started -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnMouseDelta;
                 @MouseDelta.performed -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnMouseDelta;
                 @MouseDelta.canceled -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnMouseDelta;
+                @MousePosition.started -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnMousePosition;
+                @MousePosition.performed -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnMousePosition;
+                @MousePosition.canceled -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnMousePosition;
+                @Select.started -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnSelect;
             }
             m_Wrapper.m_GameControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -360,6 +410,12 @@ public class @UserInputs : IInputActionCollection, IDisposable
                 @MouseDelta.started += instance.OnMouseDelta;
                 @MouseDelta.performed += instance.OnMouseDelta;
                 @MouseDelta.canceled += instance.OnMouseDelta;
+                @MousePosition.started += instance.OnMousePosition;
+                @MousePosition.performed += instance.OnMousePosition;
+                @MousePosition.canceled += instance.OnMousePosition;
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
             }
         }
     }
@@ -380,5 +436,7 @@ public class @UserInputs : IInputActionCollection, IDisposable
         void OnCameraZoom(InputAction.CallbackContext context);
         void OnSpaceGrab(InputAction.CallbackContext context);
         void OnMouseDelta(InputAction.CallbackContext context);
+        void OnMousePosition(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
     }
 }
