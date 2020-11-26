@@ -1,13 +1,14 @@
-﻿using Assets.Scripts.Tags;
-using Unity.Collections;
+﻿using Assets.Scripts.Entity_Selection.Components;
 using Unity.Entities;
-using Unity.Mathematics;
-using Unity.Transforms;
-using UnityEngine;
 
-namespace Assets.Scripts.Entity_Selection {
+namespace Assets.Scripts.Entity_Selection.Systems {
+    /// <summary>
+    /// System handling the selection area based on selection control.
+    /// </summary>
     public class SelectionSystem : SystemBase {
-
+        /// <summary>
+        /// Updates selection component based on Selection controls component.
+        /// </summary>
         protected override void OnUpdate() {
             Entities.ForEach((ref SelectionComponent selection, in SelectionControlsComponent controls) => {
                 selection.IsActive = false;

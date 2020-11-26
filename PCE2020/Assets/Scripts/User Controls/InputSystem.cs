@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Camera_Control;
 using Assets.Scripts.Entity_Selection;
+using Assets.Scripts.Entity_Selection.Components;
 using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
