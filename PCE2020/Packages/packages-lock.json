@@ -181,13 +181,41 @@
     },
     "com.unity.platforms": {
       "version": "0.9.0-preview.9",
-      "depth": 1,
+      "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.properties": "1.5.0-preview",
         "com.unity.properties.ui": "1.5.0-preview",
         "com.unity.scriptablebuildpipeline": "1.6.4-preview",
         "com.unity.serialization": "1.5.0-preview"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.platforms.desktop": {
+      "version": "0.9.0-preview.9",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.platforms": "0.9.0-preview.9"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.platforms.web": {
+      "version": "0.9.0-preview.9",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.platforms": "0.9.0-preview.9"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.platforms.windows": {
+      "version": "0.9.0-preview.9",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.platforms": "0.9.0-preview.9",
+        "com.unity.platforms.desktop": "0.9.0-preview.9"
       },
       "url": "https://packages.unity.com"
     },
@@ -203,7 +231,7 @@
     },
     "com.unity.properties.ui": {
       "version": "1.5.0-preview",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.properties": "1.5.0-preview",
