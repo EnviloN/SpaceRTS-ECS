@@ -9,9 +9,9 @@ namespace Assets.Scripts.Entity_Selection.Systems {
     public class UnitSelectionHighlightSystem : SystemBase
     {
         protected override void OnUpdate() {
-            Entities.WithAll<SpaceshipTag, SelectedUnitTag>().ForEach((in Translation pos) => {
-                // TODO: Highlight units
-            }).Schedule();
+            Entities.WithAll<SpaceshipTag, SelectedUnitTag>().ForEach((DynamicBuffer<Child> children, in Translation pos) => {
+                // Highlight entities
+            }).WithoutBurst().Run();
         }
     }
 }

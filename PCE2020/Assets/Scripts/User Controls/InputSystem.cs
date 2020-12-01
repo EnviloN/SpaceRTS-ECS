@@ -101,7 +101,7 @@ namespace Assets.Scripts.User_Controls {
         /// </summary>
         /// <returns>World position on XY plane.</returns>
         private float3 GetCursorPositionOnXYPlane() {
-            Debug.Assert(Camera.main != null, "Camera.main != null");
+            Debug.Assert(Camera.main != null, "Camera.main is null!");
             var mouse = new float3(_mousePosition.x, _mousePosition.y, -Camera.main.transform.position.z);
             var worldSpacePoint = Camera.main.ScreenToWorldPoint(mouse);
 
