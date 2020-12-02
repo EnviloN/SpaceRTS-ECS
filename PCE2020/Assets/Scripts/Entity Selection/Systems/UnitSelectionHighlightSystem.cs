@@ -1,17 +1,22 @@
-﻿using Assets.Scripts.Tags;
+﻿using Assets.Scripts.Rendering;
+using Assets.Scripts.Tags;
+using Unity.Collections;
 using Unity.Entities;
-using Unity.Transforms;
+using UnityEngine;
 
 namespace Assets.Scripts.Entity_Selection.Systems {
     /// <summary>
     /// System handling the visual highlighting of selected units.
     /// </summary>
-    public class UnitSelectionHighlightSystem : SystemBase
-    {
+    public class UnitSelectionHighlightSystem : SystemBase {
         protected override void OnUpdate() {
-            Entities.WithAll<SpaceshipTag, SelectedUnitTag>().ForEach((DynamicBuffer<Child> children, in Translation pos) => {
-                // Highlight entities
+            var allSelected = GetEntityQuery(ComponentType.ReadOnly<SelectedUnitTag>())
+                .ToEntityArray(Allocator.TempJob);
+
+            Entities.WithAll<SpaceshipTag>().ForEach((Entity entity, CustomMeshRenderer renderer) => {
+                renderer.Material = allSelected.Contains(entity) ? renderer.MaterialSelected : renderer.MaterialDefault;
             }).WithoutBurst().Run();
+            allSelected.Dispose(Dependency);
         }
     }
 }
