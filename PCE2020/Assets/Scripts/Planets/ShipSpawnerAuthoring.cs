@@ -16,7 +16,7 @@ namespace Assets.Scripts.Planets {
 
         public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
         {
-            var shipSpawner = new ShipSpawnerComponent() {
+            var shipSpawner = new ShipSpawnerComponent {
                 Prefab = conversionSystem.GetPrimaryEntity(Prefab),
                 SpawnPosition = transform.position,
                 OrbitSpeed = orbitSpeed,

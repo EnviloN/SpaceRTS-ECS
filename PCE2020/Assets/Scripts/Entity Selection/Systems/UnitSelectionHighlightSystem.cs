@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Rendering;
+﻿using System.Runtime.CompilerServices;
 using Assets.Scripts.Tags;
 using Unity.Collections;
 using Unity.Entities;
@@ -13,8 +13,12 @@ namespace Assets.Scripts.Entity_Selection.Systems {
             var allSelected = GetEntityQuery(ComponentType.ReadOnly<SelectedUnitTag>())
                 .ToEntityArray(Allocator.TempJob);
 
-            Entities.WithAll<SpaceshipTag>().ForEach((Entity entity, CustomMeshRenderer customRender) => {
-                customRender.Material = allSelected.Contains(entity) ? customRender.MaterialSelected : customRender.MaterialDefault;
+            // TODO: Remove this and use color specified by the team.
+            if (!ColorUtility.TryParseHtmlString("#AB0000FF", out var defaultColor))
+                defaultColor = new Color(0.6f, 0f, 0f, 1f);
+
+            Entities.WithAll<SpaceshipTag>().ForEach((Entity entity, ref MaterialColor color) => {
+                color.Value = allSelected.Contains(entity) ? (Vector4) Color.white : (Vector4) defaultColor;
             }).WithoutBurst().Run();
             allSelected.Dispose(Dependency);
         }

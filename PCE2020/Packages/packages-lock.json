@@ -249,6 +249,16 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.render-pipelines.universal": {
+      "version": "8.2.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "8.2.0",
+        "com.unity.shadergraph": "8.2.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.rendering.hybrid": {
       "version": "0.10.0-preview.21",
       "depth": 0,
