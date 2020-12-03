@@ -13,8 +13,8 @@ namespace Assets.Scripts.Entity_Selection.Systems {
             var allSelected = GetEntityQuery(ComponentType.ReadOnly<SelectedUnitTag>())
                 .ToEntityArray(Allocator.TempJob);
 
-            Entities.WithAll<SpaceshipTag>().ForEach((Entity entity, CustomMeshRenderer renderer) => {
-                renderer.Material = allSelected.Contains(entity) ? renderer.MaterialSelected : renderer.MaterialDefault;
+            Entities.WithAll<SpaceshipTag>().ForEach((Entity entity, CustomMeshRenderer customRender) => {
+                customRender.Material = allSelected.Contains(entity) ? customRender.MaterialSelected : customRender.MaterialDefault;
             }).WithoutBurst().Run();
             allSelected.Dispose(Dependency);
         }
