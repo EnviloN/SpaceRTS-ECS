@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1439226247977921100}
   - component: {fileID: 1439226247977921102}
   - component: {fileID: -5311175167443189777}
+  - component: {fileID: -2106997201631588733}
   m_Layer: 0
   m_Name: SpaceShip
   m_TagString: Untagged
@@ -141,3 +142,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 0.67058825, g: 0, b: 0, a: 1}
+--- !u!114 &-2106997201631588733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439226247977921098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb8782949b3862468efd8c91652a598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CellRadius: 0
+  SeparationWeight: 0
+  AlignmentWeight: 0
+  TargetWeight: 0
+  ObstacleAversionDistance: 0
+  MoveSpeed: 0

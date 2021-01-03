@@ -1,10 +1,7 @@
-﻿using Assets.Scripts.Rendering;
-using Assets.Scripts.Spaceship;
+﻿using Assets.Scripts.Spaceship;
+using Assets.Scripts.Spaceship.Flocking;
 using Unity.Entities;
-using Unity.Mathematics;
-using Unity.Rendering;
 using Unity.Transforms;
-using UnityEngine;
 
 namespace Assets.Scripts.Planets {
 
@@ -22,7 +19,7 @@ namespace Assets.Scripts.Planets {
             var ecb = _ecbSystem.CreateCommandBuffer();
 
             Entities
-                .ForEach((Entity entity, ref ShipSpawnerComponent shipSpawner) => {
+                .ForEach((Entity entity, ref ShipSpawnerComponent shipSpawner, ref BoidConfigComponent boidConfig) => {
                     shipSpawner.SecondsFromLastSpawn += deltaTime;
                     if (shipSpawner.SecondsFromLastSpawn >= shipSpawner.SecondsBetweenSpawns) {
                         shipSpawner.SecondsFromLastSpawn = 0;
@@ -34,6 +31,14 @@ namespace Assets.Scripts.Planets {
                         });
                         ecb.SetComponent(shipEntity, new TargetComponent {
                             TargetEntity = entity
+                        });
+                        ecb.SetComponent(shipEntity, new Boid {
+                            CellRadius = boidConfig.CellRadius,
+                            SeparationWeight = boidConfig.SeparationWeight,
+                            AlignmentWeight = boidConfig.AlignmentWeight,
+                            TargetWeight = boidConfig.TargetWeight,
+                            ObstacleAversionDistance = boidConfig.ObstacleAversionDistance,
+                            MoveSpeed = boidConfig.MoveSpeed
                         });
                     }
                 }).Schedule();
