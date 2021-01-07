@@ -73,6 +73,14 @@ public class @UserInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""MoveSelectedUnits"",
+                    ""type"": ""Button"",
+                    ""id"": ""8af7ac08-ec89-4cc7-83ca-44bc0d11781b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -262,6 +270,17 @@ public class @UserInputs : IInputActionCollection, IDisposable
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a33a5c56-4723-40af-9121-f37c7240a55b"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""MoveSelectedUnits"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -294,6 +313,7 @@ public class @UserInputs : IInputActionCollection, IDisposable
         m_GameControls_MouseDelta = m_GameControls.FindAction("MouseDelta", throwIfNotFound: true);
         m_GameControls_MousePosition = m_GameControls.FindAction("MousePosition", throwIfNotFound: true);
         m_GameControls_Select = m_GameControls.FindAction("Select", throwIfNotFound: true);
+        m_GameControls_MoveSelectedUnits = m_GameControls.FindAction("MoveSelectedUnits", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -350,6 +370,7 @@ public class @UserInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_GameControls_MouseDelta;
     private readonly InputAction m_GameControls_MousePosition;
     private readonly InputAction m_GameControls_Select;
+    private readonly InputAction m_GameControls_MoveSelectedUnits;
     public struct GameControlsActions
     {
         private @UserInputs m_Wrapper;
@@ -361,6 +382,7 @@ public class @UserInputs : IInputActionCollection, IDisposable
         public InputAction @MouseDelta => m_Wrapper.m_GameControls_MouseDelta;
         public InputAction @MousePosition => m_Wrapper.m_GameControls_MousePosition;
         public InputAction @Select => m_Wrapper.m_GameControls_Select;
+        public InputAction @MoveSelectedUnits => m_Wrapper.m_GameControls_MoveSelectedUnits;
         public InputActionMap Get() { return m_Wrapper.m_GameControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -391,6 +413,9 @@ public class @UserInputs : IInputActionCollection, IDisposable
                 @Select.started -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnSelect;
                 @Select.performed -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnSelect;
                 @Select.canceled -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnSelect;
+                @MoveSelectedUnits.started -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnMoveSelectedUnits;
+                @MoveSelectedUnits.performed -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnMoveSelectedUnits;
+                @MoveSelectedUnits.canceled -= m_Wrapper.m_GameControlsActionsCallbackInterface.OnMoveSelectedUnits;
             }
             m_Wrapper.m_GameControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -416,6 +441,9 @@ public class @UserInputs : IInputActionCollection, IDisposable
                 @Select.started += instance.OnSelect;
                 @Select.performed += instance.OnSelect;
                 @Select.canceled += instance.OnSelect;
+                @MoveSelectedUnits.started += instance.OnMoveSelectedUnits;
+                @MoveSelectedUnits.performed += instance.OnMoveSelectedUnits;
+                @MoveSelectedUnits.canceled += instance.OnMoveSelectedUnits;
             }
         }
     }
@@ -438,5 +466,6 @@ public class @UserInputs : IInputActionCollection, IDisposable
         void OnMouseDelta(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
         void OnSelect(InputAction.CallbackContext context);
+        void OnMoveSelectedUnits(InputAction.CallbackContext context);
     }
 }

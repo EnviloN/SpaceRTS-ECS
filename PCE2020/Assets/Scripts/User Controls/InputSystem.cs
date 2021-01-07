@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Camera_Control;
 using Assets.Scripts.Entity_Selection;
 using Assets.Scripts.Entity_Selection.Components;
+using Assets.Scripts.Spaceship;
 using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
@@ -24,6 +25,7 @@ namespace Assets.Scripts.User_Controls {
         private float _spaceGrab;
         private bool _selectPerformed;
         private bool _selectCanceled;
+        private bool _moveUnits;
 
         protected override void OnCreate() {
             _userInputs = new UserInputs();
@@ -57,6 +59,10 @@ namespace Assets.Scripts.User_Controls {
             _selectCanceled = context.canceled;
         }
 
+        void UserInputs.IGameControlsActions.OnMoveSelectedUnits(InputAction.CallbackContext context) {
+            _moveUnits = context.performed;
+        }
+
         /// <summary>
         /// Updates corresponding components with current input data.
         /// </summary>
@@ -79,7 +85,13 @@ namespace Assets.Scripts.User_Controls {
                 selectionComponent.SelectCanceled = _selectCanceled;
             }).WithoutBurst().Run(); // Run on main thread without burst compilation
 
+            Entities.ForEach((ref UnitContolComponent unitControlComponent) => {
+                unitControlComponent.CursorPosition = GetCursorPositionOnXYPlane();
+                unitControlComponent.MoveUnits = _moveUnits;
+            }).WithoutBurst().Run(); // Run on main thread without burst compilation
+
             _selectPerformed = _selectCanceled = false;
+            _moveUnits = false;
         }
 
         /// <summary>

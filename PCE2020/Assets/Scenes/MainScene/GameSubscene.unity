@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 363680439}
   - component: {fileID: 363680440}
   - component: {fileID: 363680438}
+  - component: {fileID: 363680441}
   m_Layer: 0
   m_Name: Cursor
   m_TagString: Untagged
@@ -340,6 +341,23 @@ MonoBehaviour:
     y: 0
     z: 0
   IsActive: 0
+--- !u!114 &363680441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363680434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236a6f5a5579d4949938bdfe7432646f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CursorPosition:
+    x: 0
+    y: 0
+    z: 0
+  MoveUnits: 0
 --- !u!4 &562017766 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2751321697310060142, guid: cdc3d2fa6e0ba0447b63276e0e671519,
@@ -637,7 +655,7 @@ PrefabInstance:
     - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: spawnsPerSecond
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
@@ -898,7 +916,7 @@ PrefabInstance:
     - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: spawnsPerSecond
-      value: 4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
@@ -1012,7 +1030,7 @@ PrefabInstance:
     - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: spawnsPerSecond
-      value: 4
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
@@ -1116,7 +1134,7 @@ PrefabInstance:
     - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: spawnsPerSecond
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}

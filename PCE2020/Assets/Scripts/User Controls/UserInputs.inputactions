@@ -60,6 +60,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "MoveSelectedUnits",
+                    "type": "Button",
+                    "id": "8af7ac08-ec89-4cc7-83ca-44bc0d11781b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -247,6 +255,17 @@
                     "processors": "",
                     "groups": "Keyboard and Mouse",
                     "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a33a5c56-4723-40af-9121-f37c7240a55b",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard and Mouse",
+                    "action": "MoveSelectedUnits",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

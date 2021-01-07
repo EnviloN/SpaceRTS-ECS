@@ -16,7 +16,7 @@ namespace Assets.Scripts.Planets {
 
         protected override void OnUpdate()
         {
-            float deltaTime = (float) Time.DeltaTime;
+            var deltaTime = Time.DeltaTime;
             var ecb = _ecbSystem.CreateCommandBuffer();
             var randomArray = World.GetExistingSystem<RandomSystem>().RandomArray;
 
