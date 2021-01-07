@@ -1,5 +1,5 @@
-﻿using Unity.Entities;
-using Unity.Jobs;
+﻿using Assets.Scripts.Quadrants;
+using Unity.Entities;
 using Unity.Collections;
 using Unity.Transforms;
 using Unity.Mathematics;
@@ -10,12 +10,10 @@ namespace Assets.Scripts.Spaceship.Flocking {
     public class FlockingSystem : SystemBase {
         protected override void OnUpdate() {
             var deltaTime = Time.DeltaTime;
-            var allShips = GetEntityQuery(ComponentType.ReadOnly<SpaceshipTag>())
-                .ToEntityArray(Allocator.TempJob);
+            var quadrantHashMap = QuadrantSystem.QuadrantHashMap;
 
             var allObstacles = GetEntityQuery(ComponentType.ReadOnly<BoidObstacle>())
                 .ToEntityArray(Allocator.TempJob);
-
 
             Entities.WithAll<SpaceshipTag>().ForEach(
                 (Entity entity, ref MovementComponent movement, in Boid boid, in Translation pos) => {
@@ -25,24 +23,18 @@ namespace Assets.Scripts.Spaceship.Flocking {
                     var separationVec = float3.zero; // For average alignment vector
 
                     var allTranslations = GetComponentDataFromEntity<Translation>(true);
-                    var allLocalToWorlds = GetComponentDataFromEntity<LocalToWorld>(true);
 
-                    // TODO: Highly inefficient - Quadtree or position hashing...
-                    for (var i = 0; i < allShips.Length; i++) {
-                        if (entity == allShips[i] || !allTranslations.HasComponent(allShips[i]))
-                            continue;
-
-                        var otherPos = allTranslations[allShips[i]];
-                        var otherRot = allLocalToWorlds[allShips[i]];
-
-                        var distance = Vector3.Distance(pos.Value, otherPos.Value);
-                        if (distance < boid.CellRadius) {
-                            neighborCnt++;
-                            separationVec += (pos.Value - otherPos.Value) / distance; // vector from other boid to this boid inversely proportional to distance
-                            cohesionPos += otherPos.Value;
-                            alignmentVec += otherRot.Up;
-                        }
-                    }
+                    var hashMapKey = QuadrantSystem.HashKeyFromPosition(pos.Value);
+                    SearchQuadrantNeighbors(quadrantHashMap, hashMapKey, entity, boid, pos, ref neighborCnt,
+                        ref cohesionPos, ref alignmentVec, ref separationVec);
+                    SearchQuadrantNeighbors(quadrantHashMap, hashMapKey + 1, entity, boid, pos, ref neighborCnt,
+                        ref cohesionPos, ref alignmentVec, ref separationVec);
+                    SearchQuadrantNeighbors(quadrantHashMap, hashMapKey - 1, entity, boid, pos, ref neighborCnt,
+                        ref cohesionPos, ref alignmentVec, ref separationVec);
+                    SearchQuadrantNeighbors(quadrantHashMap, hashMapKey + QuadrantSystem.QuadrantYMultiplier, entity,
+                        boid, pos, ref neighborCnt, ref cohesionPos, ref alignmentVec, ref separationVec);
+                    SearchQuadrantNeighbors(quadrantHashMap, hashMapKey - QuadrantSystem.QuadrantYMultiplier, entity,
+                        boid, pos, ref neighborCnt, ref cohesionPos, ref alignmentVec, ref separationVec);
 
                     var avoidanceHeading = float3.zero;
                     var avoidObstacle = false;
@@ -80,8 +72,30 @@ namespace Assets.Scripts.Spaceship.Flocking {
                     movement.Heading = math.normalizesafe(movement.Heading + deltaTime * boid.SteeringSpeed * (targetHeading - movement.Heading));
                 }).Schedule();
 
-            allShips.Dispose(Dependency);
             allObstacles.Dispose(Dependency);
+        }
+
+        private static void SearchQuadrantNeighbors(NativeMultiHashMap<int, QuadrantData> quadrantHashMap, int key,
+            Entity currentEntity, in Boid boid, in Translation pos, 
+            ref int neighborCnt, ref float3 cohesionPos, ref float3 alignmentVec, ref float3 separationVec) {
+            QuadrantData quadrantData;
+            NativeMultiHashMapIterator<int> iterator;
+            if (quadrantHashMap.TryGetFirstValue(key, out quadrantData, out iterator)) {
+                do {
+                    if (currentEntity == quadrantData.Entity)
+                        continue;
+
+                    var distance = Vector3.Distance(pos.Value, quadrantData.Position);
+                    if (distance < boid.CellRadius) {
+                        neighborCnt++;
+                        separationVec +=
+                            (pos.Value - quadrantData.Position) /
+                            distance; // vector from other boid to this boid inversely proportional to distance
+                        cohesionPos += quadrantData.Position;
+                        alignmentVec += quadrantData.Rotation;
+                    }
+                } while (quadrantHashMap.TryGetNextValue(out quadrantData, ref iterator));
+            }
         }
     }
 }
