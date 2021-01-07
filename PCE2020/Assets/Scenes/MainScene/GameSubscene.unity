@@ -340,34 +340,12 @@ MonoBehaviour:
     y: 0
     z: 0
   IsActive: 0
---- !u!1 &562017765 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2751321697310060141, guid: cdc3d2fa6e0ba0447b63276e0e671519,
-    type: 3}
-  m_PrefabInstance: {fileID: 2005941422}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &562017766 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2751321697310060142, guid: cdc3d2fa6e0ba0447b63276e0e671519,
     type: 3}
   m_PrefabInstance: {fileID: 2005941422}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &562017767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562017765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e499148fd259a664c935c19bd8a1c718, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Prefab: {fileID: 1439226247977921098, guid: 1f002e4e20aa16648ae92b75a765583d, type: 3}
-  spawnsPerSecond: 0.2
-  orbitSpeed: 1
-  orbitTurnSpeed: 0.004
 --- !u!1 &570916371
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,34 +468,12 @@ Transform:
   m_Father: {fileID: 1882526918}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1313613625 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2751321697310060141, guid: cdc3d2fa6e0ba0447b63276e0e671519,
-    type: 3}
-  m_PrefabInstance: {fileID: 2072864801}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1313613626 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2751321697310060142, guid: cdc3d2fa6e0ba0447b63276e0e671519,
     type: 3}
   m_PrefabInstance: {fileID: 2072864801}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1313613627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313613625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e499148fd259a664c935c19bd8a1c718, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Prefab: {fileID: 1439226247977921098, guid: 1f002e4e20aa16648ae92b75a765583d, type: 3}
-  spawnsPerSecond: 0.2
-  orbitSpeed: 1
-  orbitTurnSpeed: 0.004
 --- !u!1 &1659405010
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,12 +582,12 @@ PrefabInstance:
     - target: {fileID: 2751321697310060142, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.5
+      value: -14.57
       objectReference: {fileID: 0}
     - target: {fileID: 2751321697310060142, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.97
+      value: 0.87999964
       objectReference: {fileID: 0}
     - target: {fileID: 2751321697310060142, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
@@ -677,6 +633,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: spawnsPerSecond
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: CellRadius
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: ObstacleAversionDistance
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: TargetWeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: SteeringSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: SeparationWeight
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdc3d2fa6e0ba0447b63276e0e671519, type: 3}
@@ -847,12 +833,12 @@ PrefabInstance:
     - target: {fileID: 2751321697310060142, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.13
+      value: 7.02
       objectReference: {fileID: 0}
     - target: {fileID: 2751321697310060142, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08
+      value: 2.66
       objectReference: {fileID: 0}
     - target: {fileID: 2751321697310060142, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
@@ -909,8 +895,37 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.8
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519, type: 3}
+    - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: spawnsPerSecond
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: CellRadius
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: ObstacleAversionDistance
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: TargetWeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: SteeringSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: SeparationWeight
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdc3d2fa6e0ba0447b63276e0e671519, type: 3}
 --- !u!1001 &2072864801
 PrefabInstance:
@@ -932,12 +947,12 @@ PrefabInstance:
     - target: {fileID: 2751321697310060142, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.04
+      value: -9.11
       objectReference: {fileID: 0}
     - target: {fileID: 2751321697310060142, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.47
+      value: -5.56
       objectReference: {fileID: 0}
     - target: {fileID: 2751321697310060142, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
@@ -994,8 +1009,37 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.8
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519, type: 3}
+    - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: spawnsPerSecond
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: CellRadius
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: ObstacleAversionDistance
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: TargetWeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: SteeringSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: SeparationWeight
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdc3d2fa6e0ba0447b63276e0e671519, type: 3}
 --- !u!1001 &2751321697778619420
 PrefabInstance:
@@ -1017,12 +1061,12 @@ PrefabInstance:
     - target: {fileID: 2751321697310060142, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.44
+      value: 13.33
       objectReference: {fileID: 0}
     - target: {fileID: 2751321697310060142, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.1
+      value: -1.5199997
       objectReference: {fileID: 0}
     - target: {fileID: 2751321697310060142, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
@@ -1068,6 +1112,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: spawnsPerSecond
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: orbitSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: CellRadius
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: ObstacleAversionDistance
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: TargetWeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: SteeringSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: SeparationWeight
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdc3d2fa6e0ba0447b63276e0e671519, type: 3}

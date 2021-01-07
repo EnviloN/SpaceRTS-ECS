@@ -110,12 +110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7339d7bcd06e3e649841bb773e3e7713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction:
+  Heading:
     x: 0
     y: 0
     z: 0
-  Speed: 2
-  TurnSpeed: 0.001
+  MaxSpeed: 0
 --- !u!114 &1439226247977921102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +156,7 @@ MonoBehaviour:
   CellRadius: 0
   SeparationWeight: 0
   AlignmentWeight: 0
+  CohesionWeight: 0
   TargetWeight: 0
   ObstacleAversionDistance: 0
   MoveSpeed: 0

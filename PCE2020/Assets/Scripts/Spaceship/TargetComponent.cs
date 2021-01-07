@@ -1,6 +1,8 @@
 ﻿using Unity.Entities;
 
-[GenerateAuthoringComponent]
-public struct TargetComponent : IComponentData {
-    public Entity TargetEntity;
+namespace Assets.Scripts.Spaceship {
+    [GenerateAuthoringComponent]
+    public struct TargetComponent : IComponentData {
+        public Entity TargetEntity;
+    }
 }

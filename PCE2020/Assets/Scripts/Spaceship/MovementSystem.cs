@@ -11,7 +11,8 @@ namespace Assets.Scripts.Spaceship {
                 (ref Translation pos, in MovementComponent move, in Rotation rot) => {
                     var forwardDirection = math.rotate(rot.Value, math.up());
 
-                    pos.Value += forwardDirection * move.Speed * deltaTime;
+                    //pos.Value += forwardDirection * move.MaxSpeed * deltaTime;
+                    pos.Value += move.Heading * move.MaxSpeed * deltaTime;
                 }).Schedule();
         }
     }

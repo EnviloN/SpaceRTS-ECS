@@ -1,7 +1,6 @@
 ﻿using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
-using UnityEngine;
 
 namespace Assets.Scripts.Spaceship {
     public class FaceDirectionSystem : SystemBase {
@@ -13,10 +12,9 @@ namespace Assets.Scripts.Spaceship {
         }
 
         private static void FaceDirection(ref Rotation rot, MovementComponent movement) {
-            if (!movement.Direction.Equals(float3.zero)) {
-                var targetRotation = quaternion.LookRotationSafe(math.forward(), movement.Direction);
-                rot.Value = math.slerp(rot.Value, targetRotation, movement.TurnSpeed);
-            }
+            if (movement.Heading.Equals(float3.zero)) return;
+            var targetRotation = quaternion.LookRotationSafe(math.forward(), movement.Heading);
+            rot.Value = targetRotation;
         }
     }
 }

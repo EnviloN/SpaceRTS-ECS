@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using Assets.Scripts.Tags;
+﻿using Assets.Scripts.Tags;
 using Unity.Collections;
 using Unity.Entities;
 using UnityEngine;

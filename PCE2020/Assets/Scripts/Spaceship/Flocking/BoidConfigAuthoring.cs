@@ -5,21 +5,23 @@ using UnityEngine;
 namespace Assets.Scripts.Spaceship.Flocking {
     [ConverterVersion("joe", 1)]
     public class BoidConfigAuthoring : MonoBehaviour, IConvertGameObjectToEntity {
-        public float CellRadius = 8.0f;
-        public float SeparationWeight = 1.0f;
+        public float CellRadius = 0.6f;
+        public float SeparationWeight = 3.0f;
         public float AlignmentWeight = 1.0f;
+        public float CohesionWeight = 1.0f;
         public float TargetWeight = 2.0f;
-        public float ObstacleAversionDistance = 30.0f;
-        public float MoveSpeed = 25.0f;
+        public float ObstacleAversionDistance = 1.7f;
+        public float SteeringSpeed = 8.0f;
 
         public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem) {
             var boidConfig = new BoidConfigComponent {
                 CellRadius = this.CellRadius,
                 SeparationWeight = this.SeparationWeight,
                 AlignmentWeight = this.AlignmentWeight,
+                CohesionWeight = this.CohesionWeight,
                 TargetWeight = this.TargetWeight,
                 ObstacleAversionDistance = this.ObstacleAversionDistance,
-                MoveSpeed = this.MoveSpeed
+                SteeringSpeed = this.SteeringSpeed
             };
             dstManager.AddComponentData(entity, boidConfig);
         }
