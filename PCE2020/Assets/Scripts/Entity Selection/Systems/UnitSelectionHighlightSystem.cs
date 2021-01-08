@@ -18,7 +18,8 @@ namespace Assets.Scripts.Entity_Selection.Systems {
 
             Entities.WithAll<SpaceshipTag>().ForEach((Entity entity, ref MaterialColor color) => {
                 color.Value = allSelected.Contains(entity) ? (Vector4) Color.white : (Vector4) defaultColor;
-            }).WithoutBurst().Run();
+            }).Schedule();
+
             allSelected.Dispose(Dependency);
         }
     }
