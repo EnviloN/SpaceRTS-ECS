@@ -7,7 +7,7 @@ namespace Assets.Scripts.Rendering {
     [AlwaysUpdateSystem]
     [UpdateInGroup(typeof(PresentationSystemGroup))]
     class CustomMeshRendererSystem : ComponentSystem {
-        override protected void OnUpdate() {
+        protected override void OnUpdate() {
             Entities.ForEach((CustomMeshRenderer renderer, ref LocalToWorld localToWorld) => {
                 Graphics.DrawMesh(renderer.Mesh, localToWorld.Value, renderer.Material, 0);
             });

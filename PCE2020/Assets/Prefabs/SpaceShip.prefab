@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1439226247977921102}
   - component: {fileID: -5311175167443189777}
   - component: {fileID: -2106997201631588733}
+  - component: {fileID: 2618551208984106323}
   m_Layer: 0
   m_Name: SpaceShip
   m_TagString: Untagged
@@ -114,6 +115,10 @@ MonoBehaviour:
     x: 0
     y: 0
     z: 0
+  Target:
+    x: 0
+    y: 0
+    z: 0
   MaxSpeed: 0
 --- !u!114 &1439226247977921102
 MonoBehaviour:
@@ -159,4 +164,18 @@ MonoBehaviour:
   CohesionWeight: 0
   TargetWeight: 0
   ObstacleAversionDistance: 0
-  MoveSpeed: 0
+  SteeringSpeed: 0
+--- !u!114 &2618551208984106323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439226247977921098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355c4609abcc293419f91c3d2bdfa20c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  teamColor: {r: 0.022774696, g: 0, b: 1, a: 1}

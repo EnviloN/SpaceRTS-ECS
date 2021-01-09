@@ -7,8 +7,7 @@ namespace Assets.Scripts.Planets {
     public class ShipSpawnerAuthoring : MonoBehaviour, IConvertGameObjectToEntity, IDeclareReferencedPrefabs {
         public GameObject Prefab;
         public float spawnsPerSecond;
-        public float orbitSpeed;
-        public float orbitTurnSpeed;
+        public float shipMovementSpeed;
 
         public void DeclareReferencedPrefabs(List<GameObject> referencedPrefabs) {
             referencedPrefabs.Add(Prefab);
@@ -19,8 +18,7 @@ namespace Assets.Scripts.Planets {
             var shipSpawner = new ShipSpawnerComponent {
                 Prefab = conversionSystem.GetPrimaryEntity(Prefab),
                 SpawnPosition = transform.position,
-                OrbitSpeed = orbitSpeed,
-                OrbitTurnSpeed = orbitTurnSpeed,
+                ShipMovementSpeed = shipMovementSpeed,
                 SecondsBetweenSpawns = 1 / spawnsPerSecond
             };
             dstManager.AddComponentData(entity, shipSpawner);

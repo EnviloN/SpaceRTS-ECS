@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Spaceship;
 using Assets.Scripts.Spaceship.Flocking;
+using Assets.Scripts.Teams;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -22,7 +23,7 @@ namespace Assets.Scripts.Planets {
 
             Entities
                 .WithNativeDisableParallelForRestriction(randomArray)
-                .ForEach((Entity entity, int nativeThreadIndex, ref ShipSpawnerComponent shipSpawner, ref BoidConfigComponent boidConfig) => {
+                .ForEach((Entity entity, int nativeThreadIndex, ref ShipSpawnerComponent shipSpawner, ref BoidConfigComponent boidConfig, ref TeamComponent team) => {
                     var random = randomArray[nativeThreadIndex];
 
                     shipSpawner.SecondsFromLastSpawn += deltaTime;
@@ -33,11 +34,12 @@ namespace Assets.Scripts.Planets {
                         ecb.SetComponent(shipEntity, new MovementComponent {
                             Heading = new float3(random.NextFloat(-1f, 1f), random.NextFloat(-1f, 1f), 0f),
                             Target = shipSpawner.SpawnPosition,
-                            MaxSpeed = shipSpawner.OrbitSpeed
+                            MaxSpeed = shipSpawner.ShipMovementSpeed
                         }) ;
-                        //ecb.SetComponent(shipEntity, new TargetComponent {
-                        //    TargetEntity = entity
-                        //});
+                        ecb.SetComponent(shipEntity, new TeamComponent {
+                            Team = team.Team,
+                            TeamColor = team.TeamColor
+                        });
                         ecb.SetComponent(shipEntity, new Boid {
                             CellRadius = boidConfig.CellRadius,
                             SeparationWeight = boidConfig.SeparationWeight,

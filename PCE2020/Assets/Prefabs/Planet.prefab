@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2751321697310060143}
   - component: {fileID: 4275458691592866488}
   - component: {fileID: 5936610375101556807}
+  - component: {fileID: 8596837120811014588}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -98,8 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1439226247977921098, guid: 1f002e4e20aa16648ae92b75a765583d, type: 3}
   spawnsPerSecond: 4
-  orbitSpeed: 0.5
-  orbitTurnSpeed: 0.0009
+  shipMovementSpeed: 0.8
 --- !u!114 &4275458691592866488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,3 +131,17 @@ MonoBehaviour:
   TargetWeight: 2
   ObstacleAversionDistance: 1.7
   SteeringSpeed: 10
+--- !u!114 &8596837120811014588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2751321697310060141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355c4609abcc293419f91c3d2bdfa20c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 1
+  teamColor: {r: 0, g: 0.39215687, b: 0, a: 1}
