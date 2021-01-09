@@ -99,7 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1439226247977921098, guid: 1f002e4e20aa16648ae92b75a765583d, type: 3}
   spawnsPerSecond: 4
-  shipMovementSpeed: 0.8
 --- !u!114 &1237907920062489306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,13 +113,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CellRadius: 0.6
   PursuitRadius: 1
-  SeparationWeight: 2.8
+  SeparationWeight: 3
   AlignmentWeight: 1
   CohesionWeight: 1
   TargetWeight: 2
-  PursuitWeight: 3
+  PursuitWeight: 5
   ObstacleAversionDistance: 1.7
   SteeringSpeed: 8
+  MovementSpeed: 0.8
 --- !u!114 &4275458691592866488
 MonoBehaviour:
   m_ObjectHideFlags: 0
