@@ -14,6 +14,7 @@ namespace Assets.Scripts.Spaceship.Flocking {
         public float AlignmentWeight;
         public float CohesionWeight;
         public float TargetWeight;
+        public float PursuitWeight;
         public float ObstacleAversionDistance;
         public float SteeringSpeed;
     }

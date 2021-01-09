@@ -132,7 +132,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c3c70858964ea54e8f33f746de02d6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TargetPosition:
+    x: 0
+    y: 0
+    z: 0
+  TargetingRadius: 1
   TargetEntity: {fileID: 0}
+  TargetLocked: 0
 --- !u!114 &-5311175167443189777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +169,7 @@ MonoBehaviour:
   AlignmentWeight: 0
   CohesionWeight: 0
   TargetWeight: 0
+  PursuitWeight: 0
   ObstacleAversionDistance: 0
   SteeringSpeed: 0
 --- !u!114 &2618551208984106323

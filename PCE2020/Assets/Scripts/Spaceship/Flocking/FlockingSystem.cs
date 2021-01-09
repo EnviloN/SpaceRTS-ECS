@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Quadrants;
+using Assets.Scripts.Spaceship.Targeting;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
@@ -14,7 +15,7 @@ namespace Assets.Scripts.Spaceship.Flocking {
             var allObstacles = GetEntityQuery(ComponentType.ReadOnly<BoidObstacle>()).ToEntityArray(Allocator.TempJob);
 
             Entities.WithReadOnly(quadrantHashMap).WithAll<SpaceshipTag>().ForEach(
-                (Entity entity, ref MovementComponent movement, in Boid boid, in Translation pos) => {
+                (Entity entity, ref MovementComponent movement, in Boid boid, in Translation pos, in TargetingComponent target) => {
                     var neighborCnt = 0;
                     var cohesionPos = float3.zero; // For average position in neighborhood
                     var alignmentVec = float3.zero; // For average alignment vector
@@ -25,6 +26,17 @@ namespace Assets.Scripts.Spaceship.Flocking {
                     var hashMapKey = QuadrantSystem.HashKeyFromPosition(pos.Value);
                     SearchQuadrantNeighbors(in quadrantHashMap, hashMapKey, entity, boid.CellRadius, pos.Value,
                         ref neighborCnt, ref cohesionPos, ref alignmentVec, ref separationVec);
+
+                    if (neighborCnt > 0) {
+                        separationVec /= neighborCnt;
+                        cohesionPos /= neighborCnt;
+                        alignmentVec /= neighborCnt;
+                    } else {
+                        cohesionPos =
+                            pos.Value; // Set the position to current position in order to create a zero vector as heading
+                        alignmentVec = movement.Heading;
+                        separationVec = movement.Heading;
+                    }
 
                     var avoidanceHeading = float3.zero;
                     var avoidObstacle = false;
@@ -45,15 +57,10 @@ namespace Assets.Scripts.Spaceship.Flocking {
                         break; // We have found an obstacle to avoid
                     }
 
-                    if (neighborCnt > 0) {
-                        separationVec /= neighborCnt;
-                        cohesionPos /= neighborCnt;
-                        alignmentVec /= neighborCnt;
-                    } else {
-                        cohesionPos =
-                            pos.Value; // Set the position to current position in order to create a zero vector as heading
-                        alignmentVec = movement.Heading;
-                        separationVec = movement.Heading;
+
+                    var pursuitSteering = float3.zero; 
+                    if (target.TargetLocked) {
+                        pursuitSteering = math.normalizesafe(target.TargetPosition - pos.Value) * boid.PursuitWeight;
                     }
 
                     var targetSteering = math.normalizesafe(movement.Target - pos.Value) * boid.TargetWeight;
@@ -61,7 +68,7 @@ namespace Assets.Scripts.Spaceship.Flocking {
                     var cohesionSteering = math.normalizesafe(cohesionPos - pos.Value) * boid.CohesionWeight;
                     var separationSteering = math.normalizesafe(separationVec) * boid.SeparationWeight;
                     var normalHeading =
-                        math.normalizesafe(targetSteering + alignmentSteering + cohesionSteering + separationSteering);
+                        math.normalizesafe(targetSteering + alignmentSteering + cohesionSteering + separationSteering + pursuitSteering);
 
                     var targetHeading = avoidObstacle ? avoidanceHeading : normalHeading;
                     movement.Heading = math.normalizesafe(movement.Heading +

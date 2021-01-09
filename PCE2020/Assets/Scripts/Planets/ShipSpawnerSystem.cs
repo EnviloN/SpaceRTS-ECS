@@ -24,7 +24,7 @@ namespace Assets.Scripts.Planets {
 
             Entities
                 .WithNativeDisableParallelForRestriction(randomArray)
-                .ForEach((Entity entity, int nativeThreadIndex, ref ShipSpawnerComponent shipSpawner, ref BoidConfigComponent boidConfig, ref TeamComponent team) => {
+                .ForEach((Entity entity, int nativeThreadIndex, ref ShipSpawnerComponent shipSpawner, ref StarshipConfigComponent shipConfig, ref TeamComponent team) => {
                     var random = randomArray[nativeThreadIndex];
 
                     shipSpawner.SecondsFromLastSpawn += deltaTime;
@@ -35,24 +35,26 @@ namespace Assets.Scripts.Planets {
                         ecb.SetComponent(shipEntity, new MovementComponent {
                             Heading = new float3(random.NextFloat(-1f, 1f), random.NextFloat(-1f, 1f), 0f),
                             Target = shipSpawner.SpawnPosition,
-                            MaxSpeed = shipSpawner.ShipMovementSpeed
+                            MaxSpeed = shipConfig.MovementSpeed
                         }) ;
                         ecb.SetComponent(shipEntity, new TeamComponent {
                             Team = team.Team,
                             TeamColor = team.TeamColor
                         });
-                        ecb.SetComponent(shipEntity, new TargetComponent() {
+                        ecb.SetComponent(shipEntity, new TargetingComponent() {
+                            TargetingRadius = shipConfig.PursuitRadius,
                             TargetEntity = entity,
                             TargetLocked = false
                         });
                         ecb.SetComponent(shipEntity, new Boid {
-                            CellRadius = boidConfig.CellRadius,
-                            SeparationWeight = boidConfig.SeparationWeight,
-                            AlignmentWeight = boidConfig.AlignmentWeight,
-                            CohesionWeight = boidConfig.CohesionWeight,
-                            TargetWeight = boidConfig.TargetWeight,
-                            ObstacleAversionDistance = boidConfig.ObstacleAversionDistance,
-                            SteeringSpeed = boidConfig.SteeringSpeed
+                            CellRadius = shipConfig.CellRadius,
+                            SeparationWeight = shipConfig.SeparationWeight,
+                            AlignmentWeight = shipConfig.AlignmentWeight,
+                            CohesionWeight = shipConfig.CohesionWeight,
+                            TargetWeight = shipConfig.TargetWeight,
+                            PursuitWeight = shipConfig.PursuitWeight,
+                            ObstacleAversionDistance = shipConfig.ObstacleAversionDistance,
+                            SteeringSpeed = shipConfig.SteeringSpeed
                         });
                     }
                     randomArray[nativeThreadIndex] = random;

@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Tags;
+﻿using Assets.Scripts.Spaceship.Targeting;
+using Assets.Scripts.Tags;
 using Assets.Scripts.Teams;
 using Unity.Collections;
 using Unity.Entities;
@@ -13,8 +14,11 @@ namespace Assets.Scripts.Entity_Selection.Systems {
             var allSelected = GetEntityQuery(ComponentType.ReadOnly<SelectedUnitTag>())
                 .ToEntityArray(Allocator.TempJob);
 
-            Entities.WithAll<SpaceshipTag>().ForEach((Entity entity, ref MaterialColor color, in TeamComponent team) => {
+            Entities.WithAll<SpaceshipTag>().ForEach((Entity entity, ref MaterialColor color, in TeamComponent team, in TargetingComponent target) => {
                 color.Value = allSelected.Contains(entity) ? (Vector4) Color.white : team.TeamColor;
+
+                if (target.TargetLocked)
+                    color.Value = (Vector4) Color.yellow;
             }).Schedule();
 
             allSelected.Dispose(Dependency);

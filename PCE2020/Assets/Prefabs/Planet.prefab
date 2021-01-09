@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2751321697310060137}
   - component: {fileID: 2751321697310060136}
   - component: {fileID: 2751321697310060143}
+  - component: {fileID: 1237907920062489306}
   - component: {fileID: 4275458691592866488}
-  - component: {fileID: 5936610375101556807}
   - component: {fileID: 8596837120811014588}
   m_Layer: 0
   m_Name: Planet
@@ -100,19 +100,7 @@ MonoBehaviour:
   Prefab: {fileID: 1439226247977921098, guid: 1f002e4e20aa16648ae92b75a765583d, type: 3}
   spawnsPerSecond: 4
   shipMovementSpeed: 0.8
---- !u!114 &4275458691592866488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2751321697310060141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c972d4508311464186d82565e4fef41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5936610375101556807
+--- !u!114 &1237907920062489306
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,12 +113,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CellRadius: 0.6
+  PursuitRadius: 1
   SeparationWeight: 2.8
   AlignmentWeight: 1
   CohesionWeight: 1
   TargetWeight: 2
+  PursuitWeight: 3
   ObstacleAversionDistance: 1.7
-  SteeringSpeed: 10
+  SteeringSpeed: 8
+--- !u!114 &4275458691592866488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2751321697310060141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c972d4508311464186d82565e4fef41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8596837120811014588
 MonoBehaviour:
   m_ObjectHideFlags: 0

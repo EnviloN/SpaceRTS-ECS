@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Assets.Scripts.Quadrants;
+﻿using Assets.Scripts.Quadrants;
 using Assets.Scripts.Spaceship.Flocking;
 using Assets.Scripts.Teams;
 using Unity.Collections;
@@ -16,17 +15,19 @@ namespace Assets.Scripts.Spaceship.Targeting {
             var quadrantHashMap = QuadrantSystem.QuadrantHashMap;
 
             Entities.WithReadOnly(quadrantHashMap).WithAll<SpaceshipTag>().ForEach(
-                (Entity entity, ref TargetComponent target, in Translation pos, in TeamComponent team, in Boid boid) => {
+                (Entity entity, ref TargetingComponent target, in Translation pos, in TeamComponent team, in Boid boid) => {
                     var hashMapKey = QuadrantSystem.HashKeyFromPosition(pos.Value);
 
                     var minDistance = float.MaxValue;
                     var closestEntity = target.TargetEntity;
+                    var closestPos = target.TargetPosition;
                     var newTargetFound = false;
-                    if (SearchQuadrantNeighbors(in quadrantHashMap, hashMapKey, entity, boid.CellRadius,
-                        pos.Value, team.Team, target.TargetLocked, target.TargetEntity, ref minDistance, ref closestEntity, ref newTargetFound))
+                    if (SearchQuadrantNeighbors(in quadrantHashMap, hashMapKey, entity, target.TargetingRadius,
+                        pos.Value, team.Team, target.TargetLocked, target.TargetEntity, ref minDistance, ref closestEntity, ref closestPos, ref newTargetFound))
                         return;
 
                     if (newTargetFound) {
+                        target.TargetPosition = closestPos;
                         target.TargetEntity = closestEntity;
                         target.TargetLocked = true;
                     } else {
@@ -36,7 +37,7 @@ namespace Assets.Scripts.Spaceship.Targeting {
         }
 
         private static bool SearchQuadrantNeighbor(in NativeMultiHashMap<int, QuadrantData> quadrantHashMap, in int key,
-            in Entity currentEntity, in float radius, in float3 pos, in TeamComponent.TeamEnum team, bool targetLocked, Entity targetEntity, ref float minDistance, ref Entity closestEntity, ref bool newTargetFound) {
+            in Entity currentEntity, in float radius, in float3 pos, in TeamComponent.TeamEnum team, bool targetLocked, Entity targetEntity, ref float minDistance, ref Entity closestEntity, ref float3 closestPos, ref bool newTargetFound) {
             if (!quadrantHashMap.TryGetFirstValue(key, out var quadrantData, out var iterator))
                 return false;
 
@@ -53,6 +54,7 @@ namespace Assets.Scripts.Spaceship.Targeting {
                         newTargetFound = true;
                         minDistance = distance;
                         closestEntity = quadrantData.Entity;
+                        closestPos = quadrantData.Position;
                     }
                 }
             } while (quadrantHashMap.TryGetNextValue(out quadrantData, ref iterator));
@@ -61,26 +63,26 @@ namespace Assets.Scripts.Spaceship.Targeting {
         }
 
         private static bool SearchQuadrantNeighbors(in NativeMultiHashMap<int, QuadrantData> quadrantHashMap, in int key,
-            in Entity currentEntity, in float radius, in float3 pos, in TeamComponent.TeamEnum team, bool targetLocked, Entity targetEntity, ref float minDistance, ref Entity closestEntity, ref bool newTargetFound) {
+            in Entity currentEntity, in float radius, in float3 pos, in TeamComponent.TeamEnum team, bool targetLocked, Entity targetEntity, ref float minDistance, ref Entity closestEntity, ref float3 closestPos, ref bool newTargetFound) {
 
             if (SearchQuadrantNeighbor(quadrantHashMap, key, currentEntity, radius,
-                pos, team, targetLocked, targetEntity, ref minDistance, ref closestEntity, ref newTargetFound))
+                pos, team, targetLocked, targetEntity, ref minDistance, ref closestEntity, ref closestPos, ref newTargetFound))
                 return true;
 
             if (SearchQuadrantNeighbor(quadrantHashMap, key + 1, currentEntity, radius,
-                pos, team, targetLocked, targetEntity, ref minDistance, ref closestEntity, ref newTargetFound))
+                pos, team, targetLocked, targetEntity, ref minDistance, ref closestEntity, ref closestPos, ref newTargetFound))
                 return true;
 
             if (SearchQuadrantNeighbor(quadrantHashMap, key - 1, currentEntity, radius,
-                pos, team, targetLocked, targetEntity, ref minDistance, ref closestEntity, ref newTargetFound))
+                pos, team, targetLocked, targetEntity, ref minDistance, ref closestEntity, ref closestPos, ref newTargetFound))
                 return true;
 
             if (SearchQuadrantNeighbor(quadrantHashMap, key + QuadrantSystem.QuadrantYMultiplier, currentEntity, radius,
-                pos, team, targetLocked, targetEntity, ref minDistance, ref closestEntity, ref newTargetFound))
+                pos, team, targetLocked, targetEntity, ref minDistance, ref closestEntity, ref closestPos, ref newTargetFound))
                 return true;
 
             if (SearchQuadrantNeighbor(quadrantHashMap, key - QuadrantSystem.QuadrantYMultiplier, currentEntity, radius,
-                pos, team, targetLocked, targetEntity, ref minDistance, ref closestEntity, ref newTargetFound))
+                pos, team, targetLocked, targetEntity, ref minDistance, ref closestEntity, ref closestPos, ref newTargetFound))
                 return true;
 
             return false;
