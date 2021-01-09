@@ -13,7 +13,7 @@ namespace Assets.Scripts.Spaceship.Flocking {
 
             var allObstacles = GetEntityQuery(ComponentType.ReadOnly<BoidObstacle>()).ToEntityArray(Allocator.TempJob);
 
-            Entities.WithAll<SpaceshipTag>().ForEach(
+            Entities.WithReadOnly(quadrantHashMap).WithAll<SpaceshipTag>().ForEach(
                 (Entity entity, ref MovementComponent movement, in Boid boid, in Translation pos) => {
                     var neighborCnt = 0;
                     var cohesionPos = float3.zero; // For average position in neighborhood
@@ -23,7 +23,7 @@ namespace Assets.Scripts.Spaceship.Flocking {
                     var allTranslations = GetComponentDataFromEntity<Translation>(true);
 
                     var hashMapKey = QuadrantSystem.HashKeyFromPosition(pos.Value);
-                    SearchQuadrantNeighbors(quadrantHashMap, hashMapKey, entity, boid.CellRadius, pos.Value,
+                    SearchQuadrantNeighbors(in quadrantHashMap, hashMapKey, entity, boid.CellRadius, pos.Value,
                         ref neighborCnt, ref cohesionPos, ref alignmentVec, ref separationVec);
 
                     var avoidanceHeading = float3.zero;

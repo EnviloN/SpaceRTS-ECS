@@ -1,4 +1,5 @@
-﻿using Unity.Collections;
+﻿using Assets.Scripts.Teams;
+using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -25,12 +26,13 @@ namespace Assets.Scripts.Quadrants {
 
             QuadrantHashMap.Clear();
 
-            Entities.WithAll<SpaceshipTag>().ForEach((Entity entity, in Translation pos, in LocalToWorld ltw) => {
+            Entities.WithAll<SpaceshipTag>().ForEach((Entity entity, in Translation pos, in LocalToWorld ltw, in TeamComponent team) => {
                 var hasMapKey = HashKeyFromPosition(pos.Value);
                 QuadrantHashMap.Add(hasMapKey, new QuadrantData {
-                    Entity = entity,
                     Position = pos.Value,
-                    Rotation = ltw.Up
+                    Rotation = ltw.Up,
+                    Entity = entity,
+                    Team = team.Team
                 });
             }).WithoutBurst().Run();
 

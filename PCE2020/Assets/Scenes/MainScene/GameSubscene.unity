@@ -682,6 +682,16 @@ PrefabInstance:
       propertyPath: SeparationWeight
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8596837120811014588, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.g
+      value: 0.24313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596837120811014588, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.b
+      value: 0.7176471
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdc3d2fa6e0ba0447b63276e0e671519, type: 3}
 --- !u!1 &1764762073
@@ -1071,6 +1081,21 @@ PrefabInstance:
         type: 3}
       propertyPath: SeparationWeight
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596837120811014588, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.g
+      value: 0.2409571
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596837120811014588, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.b
+      value: 0.7169812
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596837120811014588, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdc3d2fa6e0ba0447b63276e0e671519, type: 3}

@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Spaceship;
 using Assets.Scripts.Spaceship.Flocking;
+using Assets.Scripts.Spaceship.Targeting;
 using Assets.Scripts.Teams;
 using Unity.Entities;
 using Unity.Mathematics;
@@ -39,6 +40,10 @@ namespace Assets.Scripts.Planets {
                         ecb.SetComponent(shipEntity, new TeamComponent {
                             Team = team.Team,
                             TeamColor = team.TeamColor
+                        });
+                        ecb.SetComponent(shipEntity, new TargetComponent() {
+                            TargetEntity = entity,
+                            TargetLocked = false
                         });
                         ecb.SetComponent(shipEntity, new Boid {
                             CellRadius = boidConfig.CellRadius,
