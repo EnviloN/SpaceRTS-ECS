@@ -587,6 +587,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 570916372}
     m_Modifications:
+    - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.g
+      value: 0.02745098
+      objectReference: {fileID: 0}
+    - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.b
+      value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: team
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2751321697310060136, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -848,6 +868,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 570916372}
     m_Modifications:
+    - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.r
+      value: 0.67058825
+      objectReference: {fileID: 0}
+    - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2751321697310060136, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -977,6 +1012,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 570916372}
     m_Modifications:
+    - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: team
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.g
+      value: 0.0250674
+      objectReference: {fileID: 0}
+    - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.b
+      value: 0.5849056
+      objectReference: {fileID: 0}
+    - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2751321697310060136, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1106,6 +1166,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 570916372}
     m_Modifications:
+    - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.r
+      value: 0.67058825
+      objectReference: {fileID: 0}
+    - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: teamColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2751321697310060136, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1181,6 +1256,12 @@ PrefabInstance:
       propertyPath: orbitSpeed
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: Prefab
+      value: 
+      objectReference: {fileID: 1439226247977921098, guid: 1f002e4e20aa16648ae92b75a765583d,
+        type: 3}
     - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: CellRadius

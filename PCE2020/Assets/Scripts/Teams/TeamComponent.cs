@@ -2,6 +2,7 @@
 using Unity.Entities;
 
 namespace Assets.Scripts.Teams {
+    [GenerateAuthoringComponent]
     public struct TeamComponent : IComponentData {
         public TeamEnum Team;
         public Vector4 TeamColor;

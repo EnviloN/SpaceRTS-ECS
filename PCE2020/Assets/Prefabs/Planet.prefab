@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2751321697310060143}
   - component: {fileID: 1237907920062489306}
   - component: {fileID: 4275458691592866488}
-  - component: {fileID: 8596837120811014588}
+  - component: {fileID: -2333548865999120257}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c972d4508311464186d82565e4fef41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8596837120811014588
+--- !u!114 &-2333548865999120257
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,5 +145,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355c4609abcc293419f91c3d2bdfa20c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team: 1
-  teamColor: {r: 0, g: 0.39215687, b: 0, a: 1}
+  team: 0
+  teamColor: {r: 0, g: 0, b: 0, a: 0}

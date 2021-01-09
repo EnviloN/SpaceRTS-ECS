@@ -36,7 +36,7 @@ namespace Assets.Scripts.Planets {
                             Heading = new float3(random.NextFloat(-1f, 1f), random.NextFloat(-1f, 1f), 0f),
                             Target = shipSpawner.SpawnPosition,
                             MaxSpeed = shipConfig.MovementSpeed
-                        }) ;
+                        });
                         ecb.SetComponent(shipEntity, new TeamComponent {
                             Team = team.Team,
                             TeamColor = team.TeamColor
