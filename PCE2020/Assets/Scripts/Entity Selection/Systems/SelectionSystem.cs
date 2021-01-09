@@ -23,7 +23,6 @@ namespace Assets.Scripts.Entity_Selection.Systems {
                     selection.EndPosition = controls.CursorPosition;
                     selection.IsActive = true;
                 }
-
             }).WithoutBurst().Run();
         }
     }
