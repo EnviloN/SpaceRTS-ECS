@@ -11,6 +11,7 @@ namespace Assets.Scripts.Entity_Selection.Systems {
     /// <summary>
     /// System handling unit selection after a selection area has been activated.
     /// </summary>
+    [UpdateInGroup (typeof(InitializationSystemGroup))]
     public class UnitSelectorSystem : JobComponentSystem {
         /// <summary>
         /// Reference to the cursor entity.
@@ -20,15 +21,15 @@ namespace Assets.Scripts.Entity_Selection.Systems {
         /// Reference to the <c>EndSimulationEntityCommandBufferSystem</c> that
         /// handles buffering of commands that affect entities.
         /// </summary>
-        private EndSimulationEntityCommandBufferSystem _endSimulationEcbSystem;
+        private EndInitializationEntityCommandBufferSystem _beginSimulationEcbSystem;
 
         /// <summary>
         /// Gets or creates an <c>EndSimulationEntityCommandBufferSystem</c>
         /// </summary>
         protected override void OnCreate() {
             base.OnCreate();
-            _endSimulationEcbSystem = World
-                .GetOrCreateSystem<EndSimulationEntityCommandBufferSystem>();
+            _beginSimulationEcbSystem = World
+                .GetOrCreateSystem<EndInitializationEntityCommandBufferSystem>();
         }
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace Assets.Scripts.Entity_Selection.Systems {
             var topRightCorner = GetTopRightPosition(selection.StartPosition, selection.EndPosition);
 
             // Create command buffer where component manipulation commands will be added
-            var ecb = _endSimulationEcbSystem.CreateCommandBuffer().AsParallelWriter();
+            var ecb = _beginSimulationEcbSystem.CreateCommandBuffer().AsParallelWriter();
 
             // Handle selection of units by adding or removing SelectedUnitTag component
             var jobHandle = Entities.WithAll<SpaceshipTag>().ForEach((Entity entity, int entityInQueryIndex, ref Translation pos) => {
@@ -73,7 +74,7 @@ namespace Assets.Scripts.Entity_Selection.Systems {
                 }
             }).Schedule(inputDeps);
 
-            _endSimulationEcbSystem.AddJobHandleForProducer(jobHandle);
+            _beginSimulationEcbSystem.AddJobHandleForProducer(jobHandle);
             return jobHandle;
         }
 

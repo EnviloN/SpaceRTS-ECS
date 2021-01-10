@@ -7,6 +7,7 @@ using Unity.Transforms;
 using UnityEngine;
 
 namespace Assets.Scripts.Spaceship.Flocking {
+    [UpdateAfter(typeof(QuadrantSystem))]
     public class FlockingSystem : SystemBase {
         protected override void OnUpdate() {
             var deltaTime = Time.DeltaTime;

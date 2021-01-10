@@ -8,6 +8,7 @@ using Unity.Transforms;
 using UnityEngine;
 
 namespace Assets.Scripts.Spaceship.Targeting {
+    [UpdateAfter(typeof(QuadrantSystem))]
     public class TargetingSystem : SystemBase
     {
         protected override void OnUpdate()
