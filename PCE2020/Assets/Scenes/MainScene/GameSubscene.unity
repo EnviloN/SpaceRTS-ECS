@@ -287,11 +287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236a6f5a5579d4949938bdfe7432646f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CursorPosition:
-    x: 0
-    y: 0
-    z: 0
-  MoveUnits: 0
 --- !u!4 &562017766 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2751321697310060142, guid: cdc3d2fa6e0ba0447b63276e0e671519,
@@ -937,7 +932,7 @@ PrefabInstance:
     - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: spawnsPerSecond
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
@@ -1233,7 +1228,7 @@ PrefabInstance:
     - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: spawnsPerSecond
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
@@ -1393,7 +1388,7 @@ PrefabInstance:
     - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: spawnsPerSecond
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
@@ -1533,7 +1528,7 @@ PrefabInstance:
     - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: spawnsPerSecond
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
