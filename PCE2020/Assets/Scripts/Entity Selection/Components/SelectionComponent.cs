@@ -1,4 +1,5 @@
-﻿using Unity.Entities;
+﻿using System;
+using Unity.Entities;
 using Unity.Mathematics;
 
 namespace Assets.Scripts.Entity_Selection.Components {
@@ -7,8 +8,8 @@ namespace Assets.Scripts.Entity_Selection.Components {
     /// </summary>
     [GenerateAuthoringComponent]
     public struct SelectionComponent : IComponentData {
-        public float3 StartPosition;
-        public float3 EndPosition;
-        public bool IsActive;
+        [NonSerialized] public float3 StartPosition;
+        [NonSerialized] public float3 EndPosition;
+        [NonSerialized] public bool IsActive;
     }
 }

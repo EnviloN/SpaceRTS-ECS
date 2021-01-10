@@ -263,12 +263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f690149b6d6f4d41bb264d3fdba7f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CursorPosition:
-    x: 0
-    y: 0
-    z: 0
-  SelectPerformed: 0
-  SelectCanceled: 0
 --- !u!114 &363680440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,15 +275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1554207f36cf38a43ad019d6a6a86c0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPosition:
-    x: 0
-    y: 0
-    z: 0
-  EndPosition:
-    x: 0
-    y: 0
-    z: 0
-  IsActive: 0
 --- !u!114 &363680441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,12 +852,12 @@ PrefabInstance:
     - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: teamColor.g
-      value: 0.02745098
+      value: 0.16078432
       objectReference: {fileID: 0}
     - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: teamColor.b
-      value: 0.5882353
+      value: 0.8980392
       objectReference: {fileID: 0}
     - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
@@ -954,6 +939,12 @@ PrefabInstance:
       propertyPath: spawnsPerSecond
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 1439226247977921098, guid: 1f002e4e20aa16648ae92b75a765583d,
+        type: 3}
     - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: CellRadius
@@ -1244,6 +1235,12 @@ PrefabInstance:
       propertyPath: spawnsPerSecond
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 1439226247977921098, guid: 1f002e4e20aa16648ae92b75a765583d,
+        type: 3}
     - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: CellRadius
@@ -1306,12 +1303,12 @@ PrefabInstance:
     - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: teamColor.g
-      value: 0.0250674
+      value: 0.1572945
       objectReference: {fileID: 0}
     - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: teamColor.b
-      value: 0.5849056
+      value: 0.8962264
       objectReference: {fileID: 0}
     - target: {fileID: -2333548865999120257, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
@@ -1398,6 +1395,12 @@ PrefabInstance:
       propertyPath: spawnsPerSecond
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 1439226247977921098, guid: 1f002e4e20aa16648ae92b75a765583d,
+        type: 3}
     - target: {fileID: 5936610375101556807, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: CellRadius
@@ -1540,6 +1543,12 @@ PrefabInstance:
     - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
         type: 3}
       propertyPath: Prefab
+      value: 
+      objectReference: {fileID: 1439226247977921098, guid: 1f002e4e20aa16648ae92b75a765583d,
+        type: 3}
+    - target: {fileID: 2751321697310060143, guid: cdc3d2fa6e0ba0447b63276e0e671519,
+        type: 3}
+      propertyPath: prefab
       value: 
       objectReference: {fileID: 1439226247977921098, guid: 1f002e4e20aa16648ae92b75a765583d,
         type: 3}

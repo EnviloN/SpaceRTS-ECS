@@ -7,7 +7,7 @@ namespace Assets.Scripts.Entity_Selection.Systems {
     /// </summary>
     public class SelectionSystem : SystemBase {
         /// <summary>
-        /// Updates selection component based on Selection controls component.
+        /// Updates <c>SelectionComponent</c> based on <c>SelectionControlsComponent</c>.
         /// </summary>
         protected override void OnUpdate() {
             Entities.ForEach((ref SelectionComponent selection, in SelectionControlsComponent controls) => {
@@ -23,7 +23,7 @@ namespace Assets.Scripts.Entity_Selection.Systems {
                     selection.EndPosition = controls.CursorPosition;
                     selection.IsActive = true;
                 }
-            }).WithoutBurst().Run();
+            }).Schedule();
         }
     }
 }

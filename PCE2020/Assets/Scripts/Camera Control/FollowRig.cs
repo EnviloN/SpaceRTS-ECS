@@ -1,5 +1,4 @@
 ﻿using Unity.Entities;
-using Unity.Mathematics;
 using Unity.Transforms;
 using UnityEngine;
 
@@ -11,6 +10,7 @@ namespace Assets.Scripts.Camera_Control {
     /// <remarks>It makes the camera move with camera rig (entity).</remarks>
     public class FollowRig : MonoBehaviour {
         public Entity RigEntity;
+
         private EntityManager _entityManager;
 
         /// <summary>

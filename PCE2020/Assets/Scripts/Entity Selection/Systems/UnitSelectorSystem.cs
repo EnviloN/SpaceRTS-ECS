@@ -11,25 +11,32 @@ namespace Assets.Scripts.Entity_Selection.Systems {
     /// <summary>
     /// System handling unit selection after a selection area has been activated.
     /// </summary>
-    [UpdateInGroup (typeof(InitializationSystemGroup))]
+    /// 
+    /// <remarks>
+    /// We want to update this system in <c>InitializationSystemGroup</c> and add all commands to the
+    /// <c>EndInitializationEntityCommandBufferSystem</c>. Because in the Simulation group, we are
+    /// handling destroying of spaceships and we could try to modify the Archetype of an entity, that
+    /// has already been deleted.
+    /// </remarks>
+    [UpdateInGroup(typeof(InitializationSystemGroup))]
     public class UnitSelectorSystem : JobComponentSystem {
         /// <summary>
         /// Reference to the cursor entity.
         /// </summary>
         private Entity _cursor;
+
         /// <summary>
-        /// Reference to the <c>EndSimulationEntityCommandBufferSystem</c> that
+        /// Reference to the <c>EndInitializationEntityCommandBufferSystem</c> that
         /// handles buffering of commands that affect entities.
         /// </summary>
-        private EndInitializationEntityCommandBufferSystem _beginSimulationEcbSystem;
+        private EndInitializationEntityCommandBufferSystem _ecbSystem;
 
         /// <summary>
         /// Gets or creates an <c>EndSimulationEntityCommandBufferSystem</c>
         /// </summary>
         protected override void OnCreate() {
             base.OnCreate();
-            _beginSimulationEcbSystem = World
-                .GetOrCreateSystem<EndInitializationEntityCommandBufferSystem>();
+            _ecbSystem = World.GetOrCreateSystem<EndInitializationEntityCommandBufferSystem>();
         }
 
         /// <summary>
@@ -51,8 +58,6 @@ namespace Assets.Scripts.Entity_Selection.Systems {
         protected override JobHandle OnUpdate(JobHandle inputDeps) {
             // Find the selection component
             var allSelections = GetComponentDataFromEntity<SelectionComponent>(true);
-            if (!allSelections.HasComponent(_cursor))
-                return default;
 
             var selection = allSelections[_cursor];
             if (!selection.IsActive)
@@ -63,18 +68,19 @@ namespace Assets.Scripts.Entity_Selection.Systems {
             var topRightCorner = GetTopRightPosition(selection.StartPosition, selection.EndPosition);
 
             // Create command buffer where component manipulation commands will be added
-            var ecb = _beginSimulationEcbSystem.CreateCommandBuffer().AsParallelWriter();
+            var ecb = _ecbSystem.CreateCommandBuffer().AsParallelWriter();
 
             // Handle selection of units by adding or removing SelectedUnitTag component
-            var jobHandle = Entities.WithAll<SpaceshipTag>().ForEach((Entity entity, int entityInQueryIndex, ref Translation pos) => {
-                if (IsPointInSelection(in pos.Value, in bottomLeftCorner, in topRightCorner)) {
-                    ecb.AddComponent<SelectedUnitTag>(entityInQueryIndex, entity); // Select unit
-                } else {
-                    ecb.RemoveComponent<SelectedUnitTag>(entityInQueryIndex, entity); // Deselect unit
-                }
-            }).Schedule(inputDeps);
+            var jobHandle = Entities.WithAll<SpaceshipTag>().ForEach(
+                (Entity entity, int entityInQueryIndex, ref Translation pos) => {
+                    if (IsPointInSelection(in pos.Value, in bottomLeftCorner, in topRightCorner)) {
+                        ecb.AddComponent<SelectedUnitTag>(entityInQueryIndex, entity); // Select unit
+                    } else {
+                        ecb.RemoveComponent<SelectedUnitTag>(entityInQueryIndex, entity); // De-select unit
+                    }
+                }).Schedule(inputDeps);
 
-            _beginSimulationEcbSystem.AddJobHandleForProducer(jobHandle);
+            _ecbSystem.AddJobHandleForProducer(jobHandle);
             return jobHandle;
         }
 
