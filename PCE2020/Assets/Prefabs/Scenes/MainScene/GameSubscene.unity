@@ -214,9 +214,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 363680437}
+  - component: {fileID: 363680438}
   - component: {fileID: 363680439}
   - component: {fileID: 363680440}
-  - component: {fileID: 363680438}
   - component: {fileID: 363680441}
   m_Layer: 0
   m_Name: Cursor

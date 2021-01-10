@@ -1,5 +1,6 @@
 using Unity.Entities;
 
-namespace Assets.Scripts.Spaceship.Flocking {
+namespace Assets.Scripts.Tags {
+    [GenerateAuthoringComponent]
     public struct BoidObstacle : IComponentData { }
 }

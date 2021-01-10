@@ -1,9 +1,9 @@
-﻿using System;
-using Unity.Entities;
-using UnityEngine.Serialization;
+﻿using Unity.Entities;
 
 namespace Assets.Scripts.Spaceship.Combat {
-    [Serializable]
+    /// <summary>
+    /// Component holding data used for projectile initialization.
+    /// </summary>
     public struct ShootingComponent : IComponentData {
         public Entity Prefab;
         public float ProjectileSpeed;

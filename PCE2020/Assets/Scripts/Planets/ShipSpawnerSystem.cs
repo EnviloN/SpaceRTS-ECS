@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Spaceship;
 using Assets.Scripts.Spaceship.Flocking;
+using Assets.Scripts.Spaceship.Movement;
 using Assets.Scripts.Spaceship.Targeting;
 using Assets.Scripts.Teams;
 using Assets.Scripts.Utils;
@@ -70,7 +71,7 @@ namespace Assets.Scripts.Planets {
                                 TargetingRadius = shipConfig.PursuitRadius, TargetEntity = entity, TargetLocked = false
                             });
                         ecb.SetComponent(nativeThreadIndex, shipEntity,
-                            new Boid {
+                            new BoidComponent {
                                 CellRadius = shipConfig.CellRadius,
                                 SeparationWeight = shipConfig.SeparationWeight,
                                 AlignmentWeight = shipConfig.AlignmentWeight,

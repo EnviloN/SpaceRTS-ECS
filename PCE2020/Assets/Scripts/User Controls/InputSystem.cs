@@ -1,7 +1,6 @@
 ﻿using Assets.Scripts.Camera_Control;
-using Assets.Scripts.Entity_Selection;
 using Assets.Scripts.Entity_Selection.Components;
-using Assets.Scripts.Spaceship;
+using Assets.Scripts.Spaceship.Targeting;
 using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;

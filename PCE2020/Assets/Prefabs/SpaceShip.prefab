@@ -165,8 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2035c7d324198440887039db5a4a606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Team: 0
-  TeamColor: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &5920766762618859721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24e86f20faa5b04e98a8b9c7ba12519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 3169799615246029686, guid: bc18f9af904752b4ca27747d17c5c4ff, type: 3}
+  prefab: {fileID: 3169799615246029686, guid: bc18f9af904752b4ca27747d17c5c4ff, type: 3}
   shotsPerSecond: 0.5
   projectileSpeed: 2
   aimAngle: 10

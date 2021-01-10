@@ -1,18 +1,21 @@
 ﻿using Unity.Entities;
-using Unity.Mathematics;
 using Unity.Transforms;
 
 namespace Assets.Scripts.Spaceship.Movement {
+    /// <summary>
+    /// System handling movement of entities.
+    /// </summary>
     public class MovementSystem : SystemBase {
+        /// <summary>
+        /// Handles movement of entities.
+        /// </summary>
         protected override void OnUpdate() {
             var deltaTime = Time.DeltaTime;
 
             Entities.ForEach(
                 (ref Translation pos, in MovementComponent move, in Rotation rot) => {
-                    var forwardDirection = math.rotate(rot.Value, math.up());
-
                     pos.Value += move.Heading * move.MaxSpeed * deltaTime;
-                }).Schedule();
+                }).ScheduleParallel();
         }
     }
 }

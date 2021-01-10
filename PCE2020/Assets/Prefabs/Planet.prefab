@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2751321697310060136}
   - component: {fileID: 2751321697310060143}
   - component: {fileID: 1237907920062489306}
-  - component: {fileID: 4275458691592866488}
+  - component: {fileID: 6968249553271811345}
   - component: {fileID: -2333548865999120257}
   m_Layer: 0
   m_Name: Planet
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e499148fd259a664c935c19bd8a1c718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 1439226247977921098, guid: 1f002e4e20aa16648ae92b75a765583d, type: 3}
+  prefab: {fileID: 0}
   spawnsPerSecond: 4
 --- !u!114 &1237907920062489306
 MonoBehaviour:
@@ -111,17 +111,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89940bdb498a91f4fa377eb18ba637eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CellRadius: 0.6
-  PursuitRadius: 1
-  SeparationWeight: 3
-  AlignmentWeight: 1
-  CohesionWeight: 1
-  TargetWeight: 2
-  PursuitWeight: 5
-  ObstacleAversionDistance: 1.7
-  SteeringSpeed: 8
-  MovementSpeed: 0.8
---- !u!114 &4275458691592866488
+  cellRadius: 0.6
+  pursuitRadius: 1
+  separationWeight: 3
+  alignmentWeight: 1
+  cohesionWeight: 1
+  targetWeight: 2
+  pursuitWeight: 5
+  obstacleAversionDistance: 1.7
+  steeringSpeed: 8
+  movementSpeed: 0.8
+--- !u!114 &6968249553271811345
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2751321697310060141}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c972d4508311464186d82565e4fef41, type: 3}
+  m_Script: {fileID: 11500000, guid: 36d59a3afb2f4e34ca86ef7ac986affa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &-2333548865999120257
