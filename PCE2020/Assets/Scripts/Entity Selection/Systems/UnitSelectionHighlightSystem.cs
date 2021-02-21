@@ -13,18 +13,19 @@ namespace Assets.Scripts.Entity_Selection.Systems {
     /// </summary>
     public class UnitSelectionHighlightSystem : SystemBase {
         protected override void OnUpdate() {
-            // Query entities for those that have SelectedUnitTag component
-            var allSelected = GetEntityQuery(ComponentType.ReadOnly<SelectedUnitTag>())
-                .ToEntityArray(Allocator.TempJob);
-
-            // Update all spaceships
-            Entities.WithAll<SpaceshipTag>()
+            // Update selected spaceships
+            Entities.WithAll<SelectedUnitTag>()
                 .ForEach(
                     (Entity entity, ref MaterialColor color, in TeamComponent team, in TargetingComponent target) => {
-                        color.Value = allSelected.Contains(entity) ? (Vector4) Color.white : team.TeamColor;
+                        color.Value = (Vector4) Color.white;
                     }).Schedule();
 
-            allSelected.Dispose(Dependency);
+            // Update spaceships that are not selected
+            Entities.WithNone<SelectedUnitTag>()
+                .ForEach(
+                    (Entity entity, ref MaterialColor color, in TeamComponent team, in TargetingComponent target) => {
+                        color.Value = team.TeamColor;
+                    }).Schedule();
         }
     }
 }
