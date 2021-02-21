@@ -6,6 +6,8 @@ Simple space RTS, where planets can be controlled by teams. Planets controlled b
 The player can control the starships of their team and send them to other planets. If the planet is not captured, the starships capture it.
 However, if starships of other teams are present, they need to be destroyed first. 
 
+Video from the game: https://youtu.be/cd9L43y1H1Y
+
 ## Characteristics
 - **Genre**: RTS
 - **Engine**: Unity
